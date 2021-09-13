@@ -7,4 +7,6 @@ class HtmlPagesController < ApplicationController
 
   def about
   end
+  def pricing
+  end
 end
