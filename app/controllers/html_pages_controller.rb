@@ -7,6 +7,12 @@ class HtmlPagesController < ApplicationController
 
   def about
   end
+
   def pricing
+  end
+
+  def register
+  end
+  def login
   end
 end

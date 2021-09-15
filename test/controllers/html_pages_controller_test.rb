@@ -2,30 +2,39 @@ require 'test_helper'
 
 class HtmlPagesControllerTest < ActionDispatch::IntegrationTest
   test "should get home" do
-    get html_pages_home_url
+    get root_path
     assert_response :success
-    assert_select "title", "Find More Leads"
+    assert_select "title", "Home | Find More Leads"
   end
 
   test "should get help" do
-    get html_pages_help_url
+    get help_path
     assert_response :success
     assert_select "title", "Help | Find More Leads"
 
   end
 
   test "should get about" do
-    get html_pages_about_url
+    get about_path
     assert_response :success
     assert_select "title", "About | Find More Leads"
 
   end
 
   test "should get pricing" do
-    get html_pages_pricing_url
+    get pricing_path
     assert_response :success
     assert_select "title", "Pricing | Find More Leads"
 
   end
-
+  test "should get register page" do
+    get register_path
+    assert_response :success
+    assert_select "title", "Register | Find More Leads"
+  end
+  test "should get login page" do
+    get login_path
+    assert_response :success
+    assert_select "title", "Login | Find More Leads"
+  end
 end
