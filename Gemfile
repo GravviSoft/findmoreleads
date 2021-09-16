@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}" }
 
 gem 'rails'
+gem 'bcrypt'
 gem 'bootstrap-sass'
 gem 'puma'
 gem 'sass-rails'
