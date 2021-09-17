@@ -6,11 +6,13 @@ class UsersController < ApplicationController
   end
   def new
     @user = User.new
+
   end
 
   def create
     @user = User.new(user_params)
     if @user.save
+      flash[:success] = "Welcome to the Find More Leads App #{@user.firstname}!"
       redirect_to @user
     else
       render 'new'
@@ -21,7 +23,7 @@ class UsersController < ApplicationController
   ## only accept these paramaters
   private
     def user_params
-      params.require(:user).permit(:name, :email, :password, :password_confirmation)
+      params.require(:user).permit(:firstname, :lastname, :email, :password, :password_confirmation)
     end
 
 
