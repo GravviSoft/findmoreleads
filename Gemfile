@@ -19,10 +19,10 @@ group :development, :test do
 end
 
 group :development do
-  gem 'web-console',    '4.0.1'
-  gem 'listen',         '3.1.5'
+  gem 'web-console'
+  gem 'listen'
   gem 'spring'
-  gem 'spring-watcher-listen', '2.0.1'
+  gem 'spring-watcher-listen'
 end
 
 group :production do
