@@ -1,0 +1,30 @@
+<% provide(:title, 'All Users')%>
+
+<h1>All Users</h1>
+
+<table id="albums" class="display" style="width:100%">
+        <thead>
+          <% @users.each do |user| %>
+
+            <tr>
+                	<th><%= gravatar_for user, size: 50  %></th>
+                  <th><%= user.firstname %></th>
+                  <th><%= user.lastname %></th>
+                  <th><%= user.email %></th>
+                  <th width="5%"><a type="button" href="<%= signup_path %>" class="btn btn-warning" name="button">New</a></th>
+                  <th width="5%"><a type="button" href="<%= edit_user_path(user.id)%>" class="btn btn-primary" name="button">Edit</a></th>
+                  <th width="5%"><a type="button" href="#" class="btn btn-danger" name="button">Delete</a></th>
+
+
+            </tr>
+        <% end %>
+
+        </thead>
+
+    </table>
+
+
+
+
+
+</div>
