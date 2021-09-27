@@ -7,9 +7,12 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
-require("greensock/TweenLite")
-require("greensock/easing/EasePack")
-require("greensock/jquery.gsap.js")
+require("@greensock/TweenLite")
+require("@greensock/easing/EasePack")
+//= require 'greensock/TweenLite'
+//= require 'greensock/easing/EasePack'
+
+require("@greensock/jquery.gsap.js")
 require("jquery")
 import "bootstrap"
 
