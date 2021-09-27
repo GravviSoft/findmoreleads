@@ -1,52 +1,127 @@
 <% provide(:title, 'Home') %>
 
-<div class="center jumbotron">
-  <h1>Insurance Mtkg App</h1>
-  <h4>Rocket Referrals Dev Project</h4>
-  <hr><br>
+<style>
 
-  <h2> Github Repo: <a href='https://github.com/GravviSoft/RRDP_app.git'>https://github.com/GravviSoft/RRDP_app.git</a>
+  .navbar {
+    background:transparent;
+  }
+  .footer {
+    display: none;
+  }
 
-  <h2> Deployed To Heroku: <a href='https://young-coast-18644.herokuapp.com/'>https://young-coast-18644.herokuapp.com</a>
+  .container {
+      width: 100%;
+      max-width: 93%;
+  }
+  /* .container {
+    max-width: 90%;
+} */
+
+
+  .generated-text {
+     font-family:'Lucida Grande', sans-serif;
+     font-size: calc(3vw + 2vh + 2vmin);
+     color:#3f3aa4;
+     background-color:#ffffff;
+     padding:0px;
+  }
+
+  .h3textyo{
+    font-size: calc(.8vw + .7vh + .4vmin);
+  }
+
+  .myButton {
+  	box-shadow: 3px 4px 0px 0px #899599;
+  	background:linear-gradient(to bottom, #ededed 5%, #000bac 100%);
+  	background-color:#ededed;
+  	border-radius:15px;
+  	border:1px solid #d6bcd6;
+  	display:inline-block;
+  	cursor:pointer;
+  	color:#f0f4f5;
+  	font-family:Arial;
+  	font-size: calc(.7vw + .6vh + .4vmin);
+  	padding:8px 64px;
+  	text-decoration:none;
+  	text-shadow:0px 1px 0px #ffffff;
+  }
+  .myButton:hover {
+  	background:linear-gradient(to bottom, #000bac 5%, #ededed 100%);
+  	background-color:#000bac;
+  }
+  .myButton:active {
+  	position:relative;
+  	top:1px;
+
+
+
+  }
+  body {
+    background-image: url("https://storage.googleapis.com/gravvi-audio/shutterstock/shutterstock_1854489490%20(2).png");
+    background-position:  100%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    padding-top: 0px;
+  }
+}
+
+
+
+
+</style>
+<!-- HTML Code -->
+
+
 
 <br><br><br><br>
-  <%=link_to 'Create an account', signup_path, class: 'btn btn-lg btn-primary' %>
-</div>
-<!-- 
-<div>
-  <h4>GOAL:</h4> <h4>Build a lead gen application to help insurance agents manage their marketing and advertising campaign prospects.</h4> -->
+<br><br><br><br><br>
+<div class="row">
+  <div class="col-sm-4">
+    <h1 class="generated-text">Automated
+    </h1>
+  </div>
+  </div>
+
+<div class="row">
+  <div class="col-sm-6">
+    <h1 class="generated-text">Marketing Tool
+    </h1>
+    <br>
+  </div>
+  </div>
+
+
+  <!-- <div class="col-md-4">
+    <h1 class="generated-text">Marketing Tool</h1>
+  </div> -->
 <br>
-<!-- <div>
-  <h4>Application Components:</h4>
-  <ul>
-    <li>Provide marketing/advertising funnel.</li>
-    <li>Capture data through a form(Use free quote as bate)</li>
-    <li>Add data to CRM</li>
-    <li>Automate initial appointment setting</li>
-    <li>Automate follow up through campaigns</li>
-    <li>Provide user interfacet to train BOT</li>
-  </ul>
+  <div class="row">
+
+  <div class="col-sm-6">
+        <!-- <h3>Have trouble keeping track of potential leads when running marketing campaigns?  How about following up with potential buyers who never closed?  </h3> -->
+        <h4 class="h3textyo">Capture leads using landing pages, forms and other marketing strategies.  Get real time notifications when a prospect shows interest, keep track of all prospects in one place, automate follow up campaigns and close more deals!</h4>
+  </div>
+</div>
+<br>
+<br><br>
+<div class="row">
+  <div class="col-md-4">
+    <%= link_to "<button id='myButton' class='myButton pull-right'>Demo Tool</button>".html_safe, startquotes_url   %>
+
+      <!-- <a href="#" class="myButton">Get Started</a> -->
+  </div>
 </div>
 
-<br>
-<div>
-  <h4>What problem does this app solve?</h4>
 
-    <ul>
-      <li><b>Automates Lead Capture</b>, <b>Lead Management</b> and most importantly the <b>Follow Up</b>.</li>
-      <li>Automating the process of taking a client from the top of the sales funnel to the bottom, without overwhelming companies or agents with follow up tasks needed to close sales.</li>
-      <!-- <li></li>
-      <li></li> -->
-    <!-- </ul>
 
-</div> -->
-<!-- <div>What problem does this app solve?
-    <ul>
-      <li>Proactive Lead</li>
-      <li></li>
-      <li></li>
-      <li></li>
 
-    </ul>
+<script>
+  // gsap.from("#myButton",  {duration: 1, x: -100});
+  gsap.from("#logo", {duration: 3, x: 280, opacity: 0, scale: 0.5});
 
-</div> -->
+
+  var output = document.querySelector("#output");
+
+CSSPlugin.defaultTransformPerspective = 400;
+gsap.to("#MyDiv2", {duration: 3, rotation: 360});
+</script>

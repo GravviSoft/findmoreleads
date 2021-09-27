@@ -7,7 +7,7 @@
           <% @users.each do |user| %>
 
             <tr>
-                	<th><%= gravatar_for user, size: 50  %></th>
+                	<th class="logo"><%= gravatar_for user, size: 50  %></th>
                   <th><%= user.firstname %></th>
                   <th><%= user.lastname %></th>
                   <th><%= user.email %></th>
@@ -23,8 +23,7 @@
 
     </table>
 
-
-
-
-
-</div>
+    <h2 class="title">gsap.to() Basic Usage</h2>
+    <div class="box orange"></div>
+    <div class="box grey"></div>
+    <div class="box green"></div>

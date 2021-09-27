@@ -1,0 +1,45 @@
+<%= form_for @qetquote, url: wizard_path, method: :put do |form| %>
+
+  <% provide(:title, 'Quote Form')%>
+
+  <div class="container-fluid">
+
+  <br><br><br><br><br><br><br><br><br><br>
+  <div class="col-sm-10 col-lg-offset-1">
+
+  <div class="row">
+  <h1 class="display-3">Do you own your home?</h1>
+  <br><br>
+  </div>
+  </div>
+
+  <div class="col-md-6 col-md-offset-3">
+
+  <div class="row">
+    <div class="field">
+      <li class="list-group-item" style="align:left"><%= form.label :ownhome, "I don't own my home", value: false %><%= form.radio_button :ownhome, false, :checked => true, :value => false %></li>
+
+      <li class="list-group-item"><%= form.label :ownhome, "I own my home", value: true %><%= form.radio_button :ownhome, true, :value => true %></li>
+
+
+        <div class="actions">
+          <%= link_to "<button class='btn btn-primary btn-lg btn-block'>Next</button>".html_safe, next_wizard_path   %>
+
+        </div>
+
+
+
+
+      </div>
+
+  </div>
+
+    <% end %>
+
+
+
+      </div>
+    </div>
+
+  <br>
+  <br>

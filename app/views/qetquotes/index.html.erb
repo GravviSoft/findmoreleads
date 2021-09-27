@@ -1,0 +1,109 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Qetquotes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Zip</th>
+      <th>Ownhome</th>
+      <th>Deciding</th>
+      <th>Comparing</th>
+      <th>Ready</th>
+      <th>Currentinscomp</th>
+      <th>Currentrate</th>
+      <th>Address</th>
+      <th>Singlefam</th>
+      <th>Condo</th>
+      <th>Coop</th>
+      <th>Other</th>
+      <th>Primaryres</th>
+      <th>Duplex</th>
+      <th>Threetofour</th>
+      <th>Mobilehome</th>
+      <th>Manufacturedhome</th>
+      <th>Overthreeyears</th>
+      <th>Homeyear</th>
+      <th>Sqft</th>
+      <th>Beds</th>
+      <th>Bathrooms</th>
+      <th>Numstories</th>
+      <th>Homedesign</th>
+      <th>Roof</th>
+      <th>Heating</th>
+      <th>Foundation</th>
+      <th>Frame</th>
+      <th>Material</th>
+      <th>Dogs</th>
+      <th>Pool</th>
+      <th>Tramp</th>
+      <th>Rentout</th>
+      <th>Homeforbiz</th>
+      <th>Firstname</th>
+      <th>Lastname</th>
+      <th>Birthdate</th>
+      <th>Gender</th>
+      <th>Occupation</th>
+      <th>Income</th>
+      <th>Married</th>
+      <th>Creditscore</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @qetquotes.each do |qetquote| %>
+      <tr>
+        <td><%= qetquote.zip %></td>
+        <td><%= qetquote.ownhome %></td>
+        <td><%= qetquote.deciding %></td>
+        <td><%= qetquote.comparing %></td>
+        <td><%= qetquote.ready %></td>
+        <td><%= qetquote.currentinscomp %></td>
+        <td><%= qetquote.currentrate %></td>
+        <td><%= qetquote.address %></td>
+        <td><%= qetquote.singlefam %></td>
+        <td><%= qetquote.condo %></td>
+        <td><%= qetquote.coop %></td>
+        <td><%= qetquote.other %></td>
+        <td><%= qetquote.primaryres %></td>
+        <td><%= qetquote.duplex %></td>
+        <td><%= qetquote.threetofour %></td>
+        <td><%= qetquote.mobilehome %></td>
+        <td><%= qetquote.manufacturedhome %></td>
+        <td><%= qetquote.overthreeyears %></td>
+        <td><%= qetquote.homeyear %></td>
+        <td><%= qetquote.sqft %></td>
+        <td><%= qetquote.beds %></td>
+        <td><%= qetquote.bathrooms %></td>
+        <td><%= qetquote.numstories %></td>
+        <td><%= qetquote.homedesign %></td>
+        <td><%= qetquote.roof %></td>
+        <td><%= qetquote.heating %></td>
+        <td><%= qetquote.foundation %></td>
+        <td><%= qetquote.frame %></td>
+        <td><%= qetquote.material %></td>
+        <td><%= qetquote.dogs %></td>
+        <td><%= qetquote.pool %></td>
+        <td><%= qetquote.tramp %></td>
+        <td><%= qetquote.rentout %></td>
+        <td><%= qetquote.homeforbiz %></td>
+        <td><%= qetquote.firstname %></td>
+        <td><%= qetquote.lastname %></td>
+        <td><%= qetquote.birthdate %></td>
+        <td><%= qetquote.gender %></td>
+        <td><%= qetquote.occupation %></td>
+        <td><%= qetquote.income %></td>
+        <td><%= qetquote.married %></td>
+        <td><%= qetquote.creditscore %></td>
+        <td><%= link_to 'Show', qetquote %></td>
+        <td><%= link_to 'Edit', edit_qetquote_path(qetquote) %></td>
+        <td><%= link_to 'Destroy', qetquote, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Qetquote', new_qetquote_path %>

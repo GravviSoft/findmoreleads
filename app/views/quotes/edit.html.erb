@@ -1,0 +1,37 @@
+<% provide(:title, 'Edit Quote')%>
+
+<h1>Edit Quote</h1>
+<div class="row">
+
+  <div class="col-md-6 col-md-offset-3">
+
+
+    <%= form_with(model: @quote, local: true) do |f| %>
+
+      <%= render "quotes/error_message" %>
+
+      <%= f.label :firstname, "First Name" %>
+      <%= f.text_field :firstname, class: "form-control" %>
+
+      <%= f.label :lastname, "Last Name" %>
+      <%= f.text_field :lastname, class: "form-control" %>
+
+      <%= f.label :email %>
+      <%= f.email_field :email, class: "form-control"  %>
+
+      <%= f.label :phone %>
+      <%= f.phone_field :phone, class: "form-control"  %>
+
+      <%= f.label :readyornot, "Status"%>
+      <%= f.text_field :readyornot, class: "form-control"  %>
+
+
+      <%= f.submit "Save changes", class: "btn btn-primary" %>
+    <% end %>
+
+
+  </div>
+</div>
+
+<%= link_to 'Show', @quote %> |
+<%= link_to 'Back', quotes_path %>

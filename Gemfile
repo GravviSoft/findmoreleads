@@ -10,6 +10,17 @@ gem 'webpacker'
 gem "bundler"
 gem 'turbolinks'
 gem 'jbuilder'
+
+#Multi step form
+gem 'wicked'
+#Greensock animation
+gem 'greensock-rails'
+
+# rails-generate-pdf/Gemfile
+gem 'jquery-rails'
+gem 'bootstrap'
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
 gem 'bootsnap',     '1.4.4', require: false
 
 

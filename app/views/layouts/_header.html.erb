@@ -1,11 +1,20 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
-    <div class="container">
-      <%= link_to "Find More Leads", root_path, id: "logo" %>
-      <nav>
-        <nav>
-          <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to "Home", root_path %></li>
-            <li><%= link_to "About", about_path %></li>
+
+<header class="navbar navbar-fixed-top" >
+<div class="container-fluid">
+      <!-- <a class="navbar-brand" href="#"><img src="https://storage.googleapis.com/gravvi-audio/logos/ff6c9e512cbf4ecf84449e2f688c84e3%20(3).png" id="logo"></img></a> -->
+      <%= link_to "<img src='https://storage.googleapis.com/gravvi-audio/logos/ff6c9e512cbf4ecf84449e2f688c84e3%20(3)%20(1).png' id='logo'></img>".html_safe, root_path   %>
+
+    <!-- <a ><img  class="navbar-brand" src="https://storage.googleapis.com/gravvi-audio/logos/ff6c9e512cbf4ecf84449e2f688c84e3%20(3).png" id="logo"></img></a> -->
+      <!-- <a class="navbar-brand logo-image-lg" href="{% url 'home' %}"><img src="{% static 'homebase/images/Original.svg' %}" height="50" width="260"></a> -->
+
+        <nav >
+
+
+
+          <ul class="nav navbar-nav navbar-right" >
+
+            <li ><%= link_to "Home", root_path %></li>
+            <li><%= link_to "Github", about_path %></li>
             <% if logged_in? %>
               <li><%= link_to "Users", users_path %></li>
               <li class="dropdown">
@@ -25,5 +34,7 @@
           </ul>
         </nav>
 
-    </div>
+</div>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+
 </header>

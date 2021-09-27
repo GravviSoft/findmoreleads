@@ -1,0 +1,89 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  zip: 
+  ownhome: 
+  deciding: 
+  comparing: 
+  ready: 
+  currentinscomp: MyString
+  currentrate: 
+  address: MyString
+  singlefam: 
+  condo: 
+  coop: 
+  other: 
+  primaryres: 
+  duplex: 
+  threetofour: 
+  mobilehome: 
+  manufacturedhome: 
+  overthreeyears: 
+  homeyear: 
+  sqft: 
+  beds: MyString
+  bathrooms: MyString
+  numstories: MyString
+  homedesign: MyString
+  roof: MyString
+  heating: MyString
+  foundation: MyString
+  frame: MyString
+  material: MyString
+  dogs: 
+  pool: 
+  tramp: 
+  rentout: 
+  homeforbiz: 
+  firstname: MyString
+  lastname: MyString
+  birthdate: MyString
+  gender: 
+  occupation: MyString
+  income: 
+  married: MyString
+  creditscore: 
+
+two:
+  zip: 
+  ownhome: 
+  deciding: 
+  comparing: 
+  ready: 
+  currentinscomp: MyString
+  currentrate: 
+  address: MyString
+  singlefam: 
+  condo: 
+  coop: 
+  other: 
+  primaryres: 
+  duplex: 
+  threetofour: 
+  mobilehome: 
+  manufacturedhome: 
+  overthreeyears: 
+  homeyear: 
+  sqft: 
+  beds: MyString
+  bathrooms: MyString
+  numstories: MyString
+  homedesign: MyString
+  roof: MyString
+  heating: MyString
+  foundation: MyString
+  frame: MyString
+  material: MyString
+  dogs: 
+  pool: 
+  tramp: 
+  rentout: 
+  homeforbiz: 
+  firstname: MyString
+  lastname: MyString
+  birthdate: MyString
+  gender: 
+  occupation: MyString
+  income: 
+  married: MyString
+  creditscore: 

@@ -1,0 +1,227 @@
+<%= form_with(model: qetquote) do |form| %>
+  <% if qetquote.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(qetquote.errors.count, "error") %> prohibited this qetquote from being saved:</h2>
+
+      <ul>
+        <% qetquote.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :zip %>
+    <%= form.text_field :zip %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ownhome %>
+    <%= form.text_field :ownhome %>
+  </div>
+
+  <div class="field">
+    <%= form.label :deciding %>
+    <%= form.text_field :deciding %>
+  </div>
+
+  <div class="field">
+    <%= form.label :comparing %>
+    <%= form.text_field :comparing %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ready %>
+    <%= form.text_field :ready %>
+  </div>
+
+  <div class="field">
+    <%= form.label :currentinscomp %>
+    <%= form.text_field :currentinscomp %>
+  </div>
+
+  <div class="field">
+    <%= form.label :currentrate %>
+    <%= form.text_field :currentrate %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address %>
+    <%= form.text_field :address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :singlefam %>
+    <%= form.text_field :singlefam %>
+  </div>
+
+  <div class="field">
+    <%= form.label :condo %>
+    <%= form.text_field :condo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :coop %>
+    <%= form.text_field :coop %>
+  </div>
+
+  <div class="field">
+    <%= form.label :other %>
+    <%= form.text_field :other %>
+  </div>
+
+  <div class="field">
+    <%= form.label :primaryres %>
+    <%= form.text_field :primaryres %>
+  </div>
+
+  <div class="field">
+    <%= form.label :duplex %>
+    <%= form.text_field :duplex %>
+  </div>
+
+  <div class="field">
+    <%= form.label :threetofour %>
+    <%= form.text_field :threetofour %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mobilehome %>
+    <%= form.text_field :mobilehome %>
+  </div>
+
+  <div class="field">
+    <%= form.label :manufacturedhome %>
+    <%= form.text_field :manufacturedhome %>
+  </div>
+
+  <div class="field">
+    <%= form.label :overthreeyears %>
+    <%= form.text_field :overthreeyears %>
+  </div>
+
+  <div class="field">
+    <%= form.label :homeyear %>
+    <%= form.text_field :homeyear %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sqft %>
+    <%= form.text_field :sqft %>
+  </div>
+
+  <div class="field">
+    <%= form.label :beds %>
+    <%= form.text_field :beds %>
+  </div>
+
+  <div class="field">
+    <%= form.label :bathrooms %>
+    <%= form.text_field :bathrooms %>
+  </div>
+
+  <div class="field">
+    <%= form.label :numstories %>
+    <%= form.text_field :numstories %>
+  </div>
+
+  <div class="field">
+    <%= form.label :homedesign %>
+    <%= form.text_field :homedesign %>
+  </div>
+
+  <div class="field">
+    <%= form.label :roof %>
+    <%= form.text_field :roof %>
+  </div>
+
+  <div class="field">
+    <%= form.label :heating %>
+    <%= form.text_field :heating %>
+  </div>
+
+  <div class="field">
+    <%= form.label :foundation %>
+    <%= form.text_field :foundation %>
+  </div>
+
+  <div class="field">
+    <%= form.label :frame %>
+    <%= form.text_field :frame %>
+  </div>
+
+  <div class="field">
+    <%= form.label :material %>
+    <%= form.text_field :material %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dogs %>
+    <%= form.text_field :dogs %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pool %>
+    <%= form.text_field :pool %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tramp %>
+    <%= form.text_field :tramp %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rentout %>
+    <%= form.text_field :rentout %>
+  </div>
+
+  <div class="field">
+    <%= form.label :homeforbiz %>
+    <%= form.text_field :homeforbiz %>
+  </div>
+
+  <div class="field">
+    <%= form.label :firstname %>
+    <%= form.text_field :firstname %>
+  </div>
+
+  <div class="field">
+    <%= form.label :lastname %>
+    <%= form.text_field :lastname %>
+  </div>
+
+  <div class="field">
+    <%= form.label :birthdate %>
+    <%= form.text_field :birthdate %>
+  </div>
+
+  <div class="field">
+    <%= form.label :gender %>
+    <%= form.text_field :gender %>
+  </div>
+
+  <div class="field">
+    <%= form.label :occupation %>
+    <%= form.text_field :occupation %>
+  </div>
+
+  <div class="field">
+    <%= form.label :income %>
+    <%= form.text_field :income %>
+  </div>
+
+  <div class="field">
+    <%= form.label :married %>
+    <%= form.text_field :married %>
+  </div>
+
+  <div class="field">
+    <%= form.label :creditscore %>
+    <%= form.text_field :creditscore %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

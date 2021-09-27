@@ -1,0 +1,39 @@
+<%= form_for @qetquote, url: wizard_path, method: :put do |form| %>
+
+  <% provide(:title, 'Quote Form')%>
+
+  <div class="container-fluid">
+
+  <br><br><br><br><br><br><br><br><br><br>
+  <div class="col-sm-6 col-lg-offset-3">
+
+  <div class="row">
+  <h1 class="display-3">Let's get started</h1>
+  <br><br>
+  </div>
+  </div>
+
+  <div class="col-md-6 col-md-offset-3">
+
+  <div class="row">
+
+
+
+    <div class="field">
+      <li class="list-group-item"><%= form.label :zip, "What's your ZIP code?" %></li>
+      <%= form.text_field :zip, class: "form-control"  %>
+    </div>
+
+      <div class="actions">
+        <%= link_to "<button class='btn btn-primary btn-lg btn-block'>Next</button>".html_safe, next_wizard_path   %>
+
+      </div>
+    <% end %>
+
+
+
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>

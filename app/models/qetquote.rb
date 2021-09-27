@@ -1,0 +1,2 @@
+class Qetquote < ApplicationRecord
+end
