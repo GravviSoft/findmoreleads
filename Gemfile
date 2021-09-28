@@ -14,7 +14,7 @@ gem 'jbuilder'
 #Multi step form
 gem 'wicked'
 #Greensock animation
-gem 'greensock-rails'
+gem 'greensock-rails', '~> 1.20', '>= 1.20.4.0'
 
 # rails-generate-pdf/Gemfile
 gem 'jquery-rails'
