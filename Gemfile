@@ -10,7 +10,7 @@ gem 'webpacker'
 gem "bundler"
 gem 'turbolinks'
 gem 'jbuilder'
-
+gem 'rake'
 #Multi step form
 gem 'wicked'
 #Greensock animation
