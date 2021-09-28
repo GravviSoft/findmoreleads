@@ -274,7 +274,7 @@ DEPENDENCIES
   bundler
   byebug (= 11.0.1)
   capybara
-  greensock-rails
+  greensock-rails (~> 1.20, >= 1.20.4.0)
   guard
   guard-minitest
   jbuilder
