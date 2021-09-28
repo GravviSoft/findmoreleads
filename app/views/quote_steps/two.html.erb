@@ -1,21 +1,46 @@
 <%= form_for @qetquote, url: wizard_path, method: :put do |form| %>
 
   <% provide(:title, 'Quote Form')%>
+<style>
+  .container {
+      width: 100%;
+      max-width: 93%;
+  }
+  .container-fluid#containercolor {
+    background-color:#e8ecf7;
 
-  <div class="container-fluid">
+  }
+</style>
 
-  <br><br><br><br><br><br><br><br><br><br>
-  <div class="col-sm-10 col-lg-offset-1">
-
+  <br><br><br><br>
+  <br><br><br><br><br>
   <div class="row">
-  <h1 class="display-3">Do you own your home?</h1>
+    <div class="col-sm-4">
+      <h1 class="display-4">Do you own your home?</h1>
+
+    </div>
+    </div>
+  <div class="col-lg-4">
+  <div id="containercolor" class="container-fluid">
+
+
+
+<!--
+  <div class="row">
+
+        <h1 class="display-3">Let's get started</h1>
+
+
+      </div> -->
   <br><br>
-  </div>
-  </div>
 
-  <div class="col-md-6 col-md-offset-3">
+  <div class="col-md-12">
 
-  <div class="row">
+
+
+
+
+
     <div class="field">
       <li class="list-group-item" style="align:left"><%= form.label :ownhome, "I don't own my home", value: false %><%= form.radio_button :ownhome, false, :checked => true, :value => false %></li>
 
@@ -27,19 +52,11 @@
 
         </div>
 
-
-
-
-      </div>
+      <% end %>
+      <br>
 
   </div>
+  </div>
 
-    <% end %>
-
-
-
-      </div>
-    </div>
-
-  <br>
-  <br>
+  </div>
+  </div>

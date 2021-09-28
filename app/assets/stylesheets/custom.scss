@@ -60,10 +60,28 @@ $light-gray: #333;
 //     color: #333;
 //     margin: 33px;
 // }
+// .container {
+//
+//   background-color:#eeeeee;
+//
+//
+// }
+.navbar {
+  background:transparent;
+}
+.footer {
+  display: none;
+}
 body {
+  background-image: url("https://storage.googleapis.com/gravvi-audio/shutterstock/shutterstock_1854489490%20(2).png");
+  background-position:  100%;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  padding-top: 0px;
   // background-image: url("https://storage.googleapis.com/gravvi-audio/new1.png");
   // background-color: #eeeeee;
   margin: 0 0 100px;
+  // background-color:#eeeeee;
   // height:770px;
   // background-position:  center;
   // background-repeat: no-repeat;
@@ -166,31 +184,31 @@ p{
   }
 }
 
-
-footer {
-
-  position: fixed;
-  height: 70px;
-  padding-top: 25px;
-  background-color: white;
-  bottom: 0px;
-  left: 0px;
-  right: 0px;
-  margin-bottom: 0px;
-  margin-top: 15px;
-      small {
-        float: left;
-      }
-      ul {
-        float: right;
-        list-style: none;
-        li {
-          float: left;
-          margin-left: 15px;
-          margin-right: 15px;
-        }
-      }
-}
+//
+// footer {
+//
+//   position: fixed;
+//   height: 70px;
+//   padding-top: 25px;
+//   background-color: white;
+//   bottom: 0px;
+//   left: 0px;
+//   right: 0px;
+//   margin-bottom: 0px;
+//   margin-top: 15px;
+//       small {
+//         float: left;
+//       }
+//       ul {
+//         float: right;
+//         list-style: none;
+//         li {
+//           float: left;
+//           margin-left: 15px;
+//           margin-right: 15px;
+//         }
+//       }
+// }
 
 html {
     position: relative;
@@ -226,9 +244,9 @@ html {
 
 }
 
-.navbar {
-  background:#ffffff;
-}
+// .navbar {
+//   background:#ffffff;
+// }
 .navbar li {
     margin-left : 1em;
     margin-right : 2em;
