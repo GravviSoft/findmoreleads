@@ -10,11 +10,11 @@ gem 'webpacker'
 gem "bundler"
 gem 'turbolinks'
 gem 'jbuilder'
-gem 'rake'
+
 #Multi step form
 gem 'wicked'
 #Greensock animation
-gem 'greensock-rails', '~> 1.20', '>= 1.20.4.0'
+gem 'greensock-rails'
 
 # rails-generate-pdf/Gemfile
 gem 'jquery-rails'
