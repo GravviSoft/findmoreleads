@@ -2,7 +2,7 @@
 <header class="navbar navbar-fixed-top" >
 <div class="container-fluid">
       <!-- <a class="navbar-brand" href="#"><img src="https://storage.googleapis.com/gravvi-audio/logos/ff6c9e512cbf4ecf84449e2f688c84e3%20(3).png" id="logo"></img></a> -->
-      <%= link_to "<img src='https://storage.googleapis.com/gravvi-audio/logos/ff6c9e512cbf4ecf84449e2f688c84e3%20(3)%20(1).png' id='logo'></img>".html_safe, root_path   %>
+      <%= link_to "<img class='logo' src='https://cdn.dribbble.com/users/4643902/screenshots/14448748/media/5fc5e13d3aa7e5cafc4465e736454b34.png' id='logo'></img>".html_safe, root_path   %>
 
     <!-- <a ><img  class="navbar-brand" src="https://storage.googleapis.com/gravvi-audio/logos/ff6c9e512cbf4ecf84449e2f688c84e3%20(3).png" id="logo"></img></a> -->
       <!-- <a class="navbar-brand logo-image-lg" href="{% url 'home' %}"><img src="{% static 'homebase/images/Original.svg' %}" height="50" width="260"></a> -->
@@ -13,7 +13,7 @@
 
           <ul class="nav navbar-nav navbar-right" >
 
-            <li ><%= link_to "Home", root_path %></li>
+            <li ><%= link_to "Quotes", qetquotes_url %></li>
             <li><%= link_to "Github", about_path %></li>
             <% if logged_in? %>
               <li><%= link_to "Users", users_path %></li>

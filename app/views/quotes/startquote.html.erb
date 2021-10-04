@@ -7,17 +7,25 @@
 
 
 <style>
+  .btn btn-primary {
+    color: #2b11a7;
+
+  }
   .container {
       width: 100%;
       max-width: 90%;
   }
   .container-fluid#containercolor {
-    background-color:#e8ecf7;
+    background-color: #e8ecf7;
 
   }
   .container#holdcontainer {
       width: 100%;
       max-width: 100%;
+  }
+  p{
+    font-family: Lora,Georgia,serif;
+    font-size: 1.00rem;
   }
 </style>
 
@@ -27,7 +35,7 @@
 
 <div id=holdcontainer class="container">
   <div class="row">
-    <div class="col-sm-4">
+    <div class="col-sm-5">
       <h1 class="display-3">Free Quote</h1>
     </div>
     </div>
@@ -39,7 +47,7 @@
       <div id="containercolor" class="container-fluid">
 
         <center>
-        <p class="card-text"><p><b>This landing page or form would attach to ads from facebook, google, websites or any other marketing campaign offering a free insurance quote.</b></p>
+        <p class="card-text"><p>This form would attach to ads from facebook, google, websites or any other marketing campaign offering a free insurance quote.</p>
 
         </center>
 
@@ -59,7 +67,7 @@
 <center>
               <h4 class="card-title">Home Insurance</h4><img src="https://i.pinimg.com/474x/19/2a/01/192a01119465dff74bcda1988c7dffac.jpg" width="100px" height="100px"></img>
               <p class="card-text">Free quote in minutes!</p>
-              <%= link_to "<button class='btn btn-primary btn-sm btn-block'>Begin</button>".html_safe, quote_steps_url%>
+              <%= link_to "<button class='btn btn-primary btn-sm btn-block'>Begin</button>".html_safe, quote_steps_url %>
 </center>
             </div>
           </div>
@@ -89,7 +97,7 @@
 
   <script>
     // gsap.from("#myButton",  {duration: 1, x: -100});
-    gsap.from("#holdcontainer", {duration: 3, x: 280, opacity: 0, scale: 0.5});
+    gsap.from("#holdcontainer", {duration: 3, x: 240, opacity: 0, scale: 0.5});
 
 
     // var output = document.querySelector("#output");

@@ -1,59 +1,107 @@
-<%= form_for @qetquote, url: wizard_path, method: :put do |form| %>
 
-  <% provide(:title, 'Quote Form')%>
+<% provide(:title, 'Start Quote')%>
+
+
+
+
+
+
 <style>
+  .btn btn-primary {
+    color: #2b11a7;
+
+  }
   .container {
       width: 100%;
-      max-width: 93%;
+      max-width: 90%;
   }
   .container-fluid#containercolor {
-    background-color:#e8ecf7;
+    background-color: #e8ecf7;
 
+  }
+  .container#holdcontainer {
+      width: 100%;
+      max-width: 100%;
+  }
+  p{
+    font-family: Lora,Georgia,serif;
+    font-size: 1.00rem;
   }
 </style>
 
-  <br><br><br><br>
   <br><br><br><br><br>
+
+
+
+<div id=holdcontainer class="container">
   <div class="row">
     <div class="col-sm-4">
-      <h1 class="display-3">Let's get started</h1>
-
+      <h1 class="display-3">Free Quote</h1>
     </div>
     </div>
-  <div class="col-lg-4">
-  <div id="containercolor" class="container-fluid">
+
+
+<div class="row">
+
+      <div class="col-md-4">
+      <div id="containercolor" class="container-fluid">
+
+        <center>
+        <p class="card-text"><p>This form would attach to ads from facebook, google, websites or any other marketing campaign offering a free insurance quote.</p>
+
+        </center>
+
+  <div class="col-md-3">
+    </div>
+  <div class="col-md-6">
 
 
 
-<!--
-  <div class="row">
-
-        <h1 class="display-3">Let's get started</h1>
 
 
-      </div> -->
-  <br><br>
+          <div class="row">
+          <div class="card" >
+            <!-- <center><img class="card-img-top" src="https://i.pinimg.com/474x/19/2a/01/192a01119465dff74bcda1988c7dffac.jpg" width="150px" height="150px" alt="Card image cap"></center> -->
+            <div class="card-body">
 
-  <div class="col-md-12">
+<center>
+              <h4 class="card-title">Home Insurance</h4><img src="https://i.pinimg.com/474x/19/2a/01/192a01119465dff74bcda1988c7dffac.jpg" width="100px" height="100px"></img>
+              <p class="card-text">Free quote in minutes!</p>
+              <%= link_to "<button class='btn btn-primary btn-sm btn-block' style='background-color: #2b11a7;'>Begin</button>".html_safe, next_wizard_path%>
+</center>
+            </div>
+          </div>
+      <br>
+          </div>
 
 
-
-
-
-
-      <div class="field">
-        <li class="list-group-item"><%= form.label :zip, "What's your ZIP code?" %></li>
-        <%= form.text_field :zip, class: "form-control"  %>
-      </div>
-
-        <div class="actions">
-          <%= link_to "<button class='btn btn-primary btn-lg btn-block'>Next</button>".html_safe, next_wizard_path   %>
-<br>
-        </div>
-      <% end %>
   </div>
+    <div class="col-md-3">
+    </div>
+
+
   </div>
 
   </div>
+
+  </div>
+</div>
+
   <br>
   <br>
+
+
+
+
+
+
+  <script>
+    // gsap.from("#myButton",  {duration: 1, x: -100});
+    gsap.from("#holdcontainer", {duration: 3, x: 280, opacity: 0, scale: 0.5});
+
+
+    // var output = document.querySelector("#output");
+
+  // CSSPlugin.defaultTransformPerspective = 400;
+  // gsap.to("#MyDiv2", {duration: 3, rotation: 360});
+  </script>

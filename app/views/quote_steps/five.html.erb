@@ -1,0 +1,180 @@
+
+<%= form_for @qetquote, url: newquote_url, method: :post do |form| %>
+
+  <% provide(:title, 'Quote Form')%>
+<style>
+  .btnyo {
+    background-color: #2b11a7;
+
+
+    display: block;
+    width: 100%;
+    color: white;
+    padding: .25rem .75rem;
+    font-size: .875rem;
+    line-height: 1.5;
+    border-radius: .2rem;
+}
+  .container {
+      width: 100%;
+      max-width: 93%;
+  }
+  .container-fluid#containercolor {
+    background-color:#e8ecf7;
+
+  }
+
+.card-text{
+  font-family: Lora,Georgia,serif;
+  font-size: 1.00rem;
+
+}
+#yoyo{
+
+  padding: .75rem 1.00rem;
+}
+
+select  {
+      font-family: Lora,Georgia,serif;
+      margin: 0;
+      font-size: 1.25rem;
+      font-weight: 400;
+      line-height: 1.75rem;
+      color: #383838;
+      border: 0;
+      width: 100%;
+      padding: .45rem .2rem;
+      position: relative;
+      background: white;
+      /* -webkit-appearance: none; */
+  }
+  .display-4 {
+      font-size: 2.5rem;
+      font-weight: 300;
+  }
+
+
+
+
+</style>
+
+<br><br><br>
+
+
+  <div class="row">
+    <div class="col-sm-5">
+      <h1 class="display-4">Let's get some basic information</h1>
+    </div>
+    </div>
+  <div class="col-lg-5">
+  <div id="containercolor" class="container-fluid">
+
+
+  <br>
+  <div class="col-lg-12">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="field">
+          <%= form.label :firstname, "First Name" %>
+          <%= form.text_field :firstname, class: "form-control"  %>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="field">
+          <%= form.label :lastname, "Last Name" %>
+          <%= form.text_field :lastname, class: "form-control"  %>
+        </div>
+      </div>
+    </div>
+<hr>
+
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="field">
+          <%= form.label :email, "Email" %>
+          <%= form.text_field :email, class: "form-control"  %>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="field">
+          <%= form.label :phone, "Phone" %>
+          <%= form.telephone_field :phone, class: "form-control"  %>
+        </div>
+      </div>
+    </div>
+
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="field">
+                  <%= form.label :address, "Street address" %>
+                  <%= form.text_field :address, class: "form-control"  %>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="field">
+                  <%= form.label :propertytype, "What is the property type?" %>
+
+                  <%= select(:qetquote, :propertytype, [['Single Family', 'Single Family'], 	['Condo', 'Condo'], 	['Co-op', 'Co-op'], 	['Duplex', 'Duplex'], 	['Triplex', 'Triplex'], 	['4+ units', '4+ units'], 	['Mobile Home', 'Mobile Home'], 	['Manufactured Home', 'Manufactured Home']]) %>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="field">
+                <%= form.label :city, "City" %>
+                  <%= form.text_field :city, class: "form-control"  %>
+                </div>
+              </div>
+              <div class="col-lg-2">
+                <div class="field">
+              <%= form.label :state, "ST" %>
+                  <%= select(:qetquote, :state, [['AL', 'AL'], 	['AK', 'AK'], 	['AZ', 'AZ'], 	['AR', 'AR'], 	['CA', 'CA'], 	['CO', 'CO'], 	['CT', 'CT'], 	['DE', 'DE'], 	['FL', 'FL'], 	['GA', 'GA'], 	['HI', 'HI'], 	['ID', 'ID'], 	['IL', 'IL'], 	['IN', 'IN'], 	['IA', 'IA'], 	['KS', 'KS'], 	['KY', 'KY'], 	['LA', 'LA'], 	['ME', 'ME'], 	['MD', 'MD'], 	['MA', 'MA'], 	['MI', 'MI'], 	['MN', 'MN'], 	['MS', 'MS'], 	['MO', 'MO'], 	['MT', 'MT'], 	['NE', 'NE'], 	['NV', 'NV'], 	['NH', 'NH'], 	['NJ', 'NJ'], 	['NM', 'NM'], 	['NY', 'NY'], 	['NC', 'NC'], 	['ND', 'ND'], 	['OH', 'OH'], 	['OK', 'OK'], 	['OR', 'OR'], 	['PA', 'PA'], 	['RI', 'RI'], 	['SC', 'SC'], 	['SD', 'SD'], 	['TN', 'TN'], 	['TX', 'TX'], 	['UT', 'UT'], 	['VT', 'VT'], 	['VA', 'VA'], 	['WA', 'WA'], 	['WV', 'WV'], 	['WI', 'WI'], 	['WY', 'WY'] ])%>
+                </div>
+
+              </div>
+              <div class="col-lg-4">
+                <div class="field">
+                  <%= form.label :zip2, "Zip" %>
+                  <%= form.text_field :zip2, class: "form-control"  %>
+                </div>
+              </div>
+            </div>
+
+
+
+
+      </div>
+
+
+
+
+        <div id='yoyo' class="row">
+          <div class="col-lg-12">
+            <br>
+            <%= form.label :homeprice, "What is the current value of the property?" %>
+
+            <%= select(:qetquote, :homeprice, [['$49,999 and under', '645'], 	['$50,000 to $74,999', '748'], 	['$75,000 to $99,999', '826'], 	['$100,000 to $124,999', '888'], 	['$125,000 to $149,999', '937'], 	['$150,000 to $174,999', '981'], 	['$175,000 to $199,999', '1018'], 	['$200,000 to $299,999', '1114'], 	['$300,000 to $399,999', '1272'], 	['$400,000 to $499,999', '1482'], 	['$500,000 and above', '2148']]) %>
+
+          </div>
+
+        </div>
+
+
+          <div class="actions">
+
+            <%= form.submit "Save changes", class: "btnyo" %>
+
+<br>
+          </div>
+
+</div>
+
+
+
+      <% end %>
+      <br>
+
+  </div>

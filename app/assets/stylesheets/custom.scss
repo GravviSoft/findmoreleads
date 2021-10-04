@@ -171,12 +171,12 @@ p{
 
 #logo{
   float: left;
-  margin-right: 2em;
+  margin-right: 3em;
   font-size: 1.7em;
   color: #fff;
   text-transform: uppercase;
   letter-spacing: -1px;
-  padding-top: 25px;
+  padding-top: 0px;
   font-weight: bold;
   &:hover {
     color: #fff;
@@ -229,6 +229,11 @@ html {
 //
 //
 // }
+
+
+
+
+
 .card-header{
     padding: .75rem 1.25rem;
     background-color: #f5f5f5;
@@ -243,7 +248,10 @@ html {
 
 
 }
-
+.logo {
+  height: 115px;
+   width: 135px;
+}
 // .navbar {
 //   background:#ffffff;
 // }

@@ -1,214 +1,306 @@
-<p id="notice"><%= notice %></p>
+<%= provide(:title, "#{@qetquotes.firstname} #{@qetquotes.lastname}")%>
+<style>
+  .alert alert{
+    padding-left:20px;
+  }
+  .navbar {
+    background:white;
+  }
+  .navbar li {
+      margin-left : 1em;
+      margin-right : 2em;
 
-<p>
-  <strong>Zip:</strong>
-  <%= @qetquote.zip %>
-</p>
+      font-family: Impact, black, sans-serif;
+      font-size: 26px;
+      letter-spacing: 2px;
+      word-spacing: 2px;
+      color: #000000;
+      font-weight: normal;
+      text-decoration: none;
+      font-style: normal;
+      font-variant: normal;
+      text-transform: none;
+  }
+body
+  {margin-top:20px;
+    background:#eee;
+    padding-right:60px;
 
-<p>
-  <strong>Ownhome:</strong>
-  <%= @qetquote.ownhome %>
-</p>
+}
+.logo {
+  height: 85px;
+   width: 115px;
+}
+#logo{
+  float: left;
+  margin-right: 3em;
+  font-size: 1.7em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 0px;
+  font-weight: bold;
+  &:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+.card-header{
+    padding: .75rem 1.25rem;
+    background-color: #f5f5f5;
+    // border: 1px solid black;
+    // border-bottom: 1px solid black;
 
-<p>
-  <strong>Deciding:</strong>
-  <%= @qetquote.deciding %>
-</p>
+}
+/*Invoice*/
+.invoice .top-mid {
+    font-size: 55px;
+    color: #666666;
+}
+.savings {
+  font-size: 20px;
+  color: #66c691;
 
-<p>
-  <strong>Comparing:</strong>
-  <%= @qetquote.comparing %>
-</p>
+}
+.invoice .top-left {
+    font-size:65px;
+	color:#3ba0ff;
+  padding-left:20px;
 
-<p>
-  <strong>Ready:</strong>
-  <%= @qetquote.ready %>
-</p>
+}
 
-<p>
-  <strong>Currentinscomp:</strong>
-  <%= @qetquote.currentinscomp %>
-</p>
+.invoice .top-right {
+	text-align:right;
+	padding-right:20px;
+}
 
-<p>
-  <strong>Currentrate:</strong>
-  <%= @qetquote.currentrate %>
-</p>
+.invoice .table-row {
+	margin-left:-15px;
+	margin-right:-15px;
+	margin-top:25px;
+}
 
-<p>
-  <strong>Address:</strong>
-  <%= @qetquote.address %>
-</p>
+.invoice .payment-info {
+	font-weight:500;
+}
 
-<p>
-  <strong>Singlefam:</strong>
-  <%= @qetquote.singlefam %>
-</p>
+.invoice .table-row .table>thead {
+	border-top:1px solid #ddd;
+}
 
-<p>
-  <strong>Condo:</strong>
-  <%= @qetquote.condo %>
-</p>
+.invoice .table-row .table>thead>tr>th {
+	border-bottom:none;
+}
 
-<p>
-  <strong>Coop:</strong>
-  <%= @qetquote.coop %>
-</p>
+.invoice .table>tbody>tr>td {
+	padding:8px 20px;
+}
 
-<p>
-  <strong>Other:</strong>
-  <%= @qetquote.other %>
-</p>
+.invoice .invoice-total {
+	margin-right:-10px;
+	font-size:16px;
+}
 
-<p>
-  <strong>Primaryres:</strong>
-  <%= @qetquote.primaryres %>
-</p>
+.invoice .last-row {
+	border-bottom:1px solid #ddd;
+}
 
-<p>
-  <strong>Duplex:</strong>
-  <%= @qetquote.duplex %>
-</p>
+.invoice-ribbon {
+	width:85px;
+	height:88px;
+	overflow:hidden;
+	position:absolute;
+	top:-1px;
+	right:14px;
+}
 
-<p>
-  <strong>Threetofour:</strong>
-  <%= @qetquote.threetofour %>
-</p>
+.ribbon-inner {
+	text-align:center;
+	-webkit-transform:rotate(45deg);
+	-moz-transform:rotate(45deg);
+	-ms-transform:rotate(45deg);
+	-o-transform:rotate(45deg);
+	position:relative;
+	padding:7px 0;
+	left:-5px;
+	top:11px;
+	width:120px;
+	background-color:#66c591;
+	font-size:15px;
+	color:#fff;
+}
 
-<p>
-  <strong>Mobilehome:</strong>
-  <%= @qetquote.mobilehome %>
-</p>
+.ribbon-inner:before,.ribbon-inner:after {
+	content:"";
+	position:absolute;
+}
 
-<p>
-  <strong>Manufacturedhome:</strong>
-  <%= @qetquote.manufacturedhome %>
-</p>
+.ribbon-inner:before {
+	left:0;
+}
 
-<p>
-  <strong>Overthreeyears:</strong>
-  <%= @qetquote.overthreeyears %>
-</p>
+.ribbon-inner:after {
+	right:0;
+}
 
-<p>
-  <strong>Homeyear:</strong>
-  <%= @qetquote.homeyear %>
-</p>
+@media(max-width:575px) {
+	.invoice .top-left,.invoice .top-right,.invoice .payment-details {
+		text-align:center;
+	}
 
-<p>
-  <strong>Sqft:</strong>
-  <%= @qetquote.sqft %>
-</p>
+	.invoice .from,.invoice .to,.invoice .payment-details {
+		float:none;
+		width:100%;
+		text-align:center;
+		margin-bottom:25px;
+	}
 
-<p>
-  <strong>Beds:</strong>
-  <%= @qetquote.beds %>
-</p>
+	.invoice p.lead,.invoice .from p.lead,.invoice .to p.lead,.invoice .payment-details p.lead {
+		font-size:22px;
+	}
 
-<p>
-  <strong>Bathrooms:</strong>
-  <%= @qetquote.bathrooms %>
-</p>
+	.invoice .btn {
+		margin-top:10px;
+	}
+}
 
-<p>
-  <strong>Numstories:</strong>
-  <%= @qetquote.numstories %>
-</p>
+@media print {
+	.invoice {
+		width:900px;
+		height:800px;
 
-<p>
-  <strong>Homedesign:</strong>
-  <%= @qetquote.homedesign %>
-</p>
+	}
 
-<p>
-  <strong>Roof:</strong>
-  <%= @qetquote.roof %>
-</p>
 
-<p>
-  <strong>Heating:</strong>
-  <%= @qetquote.heating %>
-</p>
 
-<p>
-  <strong>Foundation:</strong>
-  <%= @qetquote.foundation %>
-</p>
 
-<p>
-  <strong>Frame:</strong>
-  <%= @qetquote.frame %>
-</p>
+}</style>
+<br>
 
-<p>
-  <strong>Material:</strong>
-  <%= @qetquote.material %>
-</p>
 
-<p>
-  <strong>Dogs:</strong>
-  <%= @qetquote.dogs %>
-</p>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container  bootstrap snippets bootdeys">
+<div class="row">
+  <div class="col-sm-12">
+	  	<div class="panel panel-default invoice" id="invoice">
+		  <div class="panel-body">
+			<div class="invoice-ribbon"><div class="ribbon-inner">Quote</div></div>
+		    <div class="row">
 
-<p>
-  <strong>Pool:</strong>
-  <%= @qetquote.pool %>
-</p>
+				<div class="col-sm-1 top-left">
+					<i class="fa fa-rocket"></i>
+				</div>
 
-<p>
-  <strong>Tramp:</strong>
-  <%= @qetquote.tramp %>
-</p>
+			<center>	<div class="col-sm-10">
 
-<p>
-  <strong>Rentout:</strong>
-  <%= @qetquote.rentout %>
-</p>
+						<h3 >Free Quote</h3>
+            <div class="top-mid">
+						   <span class="marginright">$<%= @qetquotes.homeprice %> Annually</span>
+            </div>
+            <br>
+            <p class="savings">Save $235 Annually</p>
+            <!-- <button class="btn btn-primary" id="invoice-print"><i class="fa fa-print"></i> Schedule Appointment To Discuss</button> -->
+			    </div></center>
 
-<p>
-  <strong>Homeforbiz:</strong>
-  <%= @qetquote.homeforbiz %>
-</p>
+			</div>
+			<hr>
+			<div class="row">
 
-<p>
-  <strong>Firstname:</strong>
-  <%= @qetquote.firstname %>
-</p>
+				<div class="col-xs-4 from">
+					<p class="lead marginbottom">From : Allstate</p>
+					<p>350 Rhode Island Street</p>
+					<p>San Francisco, CA 94103</p>
+					<p>Phone: 555-555-3600</p>
+					<p>Email: contact@allstate.com</p>
+				</div>
 
-<p>
-  <strong>Lastname:</strong>
-  <%= @qetquote.lastname %>
-</p>
+				<div class="col-xs-4 to">
+					<p class="lead marginbottom">To :  <%= @qetquotes.firstname%> <%=@qetquotes.lastname%></p>
+					<p><%= @qetquotes.address %></p>
+          <p><%= "#{@qetquotes.city}, #{@qetquotes.state} #{@qetquotes.zip2}" %></p>
+          <p><%= @qetquotes.phone %></p>
+          <p><%= @qetquotes.email %></p>
 
-<p>
-  <strong>Birthdate:</strong>
-  <%= @qetquote.birthdate %>
-</p>
+			    </div>
 
-<p>
-  <strong>Gender:</strong>
-  <%= @qetquote.gender %>
-</p>
+			    <div class="col-xs-4 text-right payment-details">
+					<p class="lead marginbottom payment-info">Quote details</p>
+					<p><%= "Date:  #{@qetquotes.created_at.strftime('%m/%d/%Y')}" %></p>
+					<p>VAT: DK888-777 </p>
+			    </div>
 
-<p>
-  <strong>Occupation:</strong>
-  <%= @qetquote.occupation %>
-</p>
+			</div>
 
-<p>
-  <strong>Income:</strong>
-  <%= @qetquote.income %>
-</p>
+			<div class="row table-row">
+				<table class="table table-striped">
+			      <thead>
+			        <tr>
+			          <th style="width:50%">Item</th>
+			          <th class="text-right" style="width:15%">Coverage</th>
+			        </tr>
+			      </thead>
+			      <tbody>
+			        <tr>
+			          <td>Dwelling</td>
+			          <td class="text-right">$143,849</td>
+			        </tr>
+			        <tr>
+			          <td>Other structures</td>
+			          <td class="text-right">$14,385</td>
+			        </tr>
+			        <tr>
+			          <td>Personal property</td>
+			          <td class="text-right">$71,925</td>
+			        </tr>
+              <tr>
+                <td>Personal liability</td>
+                <td class="text-right">$300,000</td>
+              </tr>
+			         <tr class="last-row">
+			          <td>Total Coverage</td>
+			          <td class="text-right">$530,159</td>
+			        </tr>
+			       </tbody>
+			    </table>
 
-<p>
-  <strong>Married:</strong>
-  <%= @qetquote.married %>
-</p>
+			</div>
 
-<p>
-  <strong>Creditscore:</strong>
-  <%= @qetquote.creditscore %>
-</p>
+      <div class="row table-row">
+				<table class="table table-striped">
+			      <thead>
+			        <tr>
+			          <th style="width:50%">Premium</th>
+			          <th class="text-right" style="width:15%">Total Cost</th>
+			        </tr>
+			      </thead>
+			      <tbody>
 
-<%= link_to 'Edit', edit_qetquote_path(@qetquote) %> |
-<%= link_to 'Back', qetquotes_path %>
+			         <tr class="last-row">
+			          <td>Annual Premium</td>
+			          <td class="text-right">$<%= @qetquotes.homeprice %></td>
+			        </tr>
+			       </tbody>
+			    </table>
+
+			</div>
+
+
+			<div class="row">
+  			<div class="col-xs-6 margintop">
+  				<p class="lead marginbottom">THANK YOU!</p>
+          <!-- <button class="btn btn-success" onclick="window.location.href='/qetquotes'" id="invoice-print"><i class="fa fa-table"></i> Schedule Appointment To Discuss</button> -->
+  				<!-- <button class="btn btn-success" id="invoice-print"><i class="fa fa-print"></i> Print Invoice</button> -->
+  			</div>
+  			<div class="col-xs-6 text-right pull-right invoice-total">
+          <button class="btn btn-primary" onclick="window.location.href='https://calendly.com/beau-enslow/lead-gen'" id="invoice-print"><i class="fa fa-calendar"></i> Schedule Appointment To Discuss</button>
+          <!-- <button class="btn btn-success" onclick="window.location.href='/qetquotes'" id="invoice-print"><i class="fa fa-table"></i>View All Quotes</button> -->
+
+  			</div>
+			</div>
+
+		  </div>
+		</div>
+	</div>
+</div>
+</div>
+<br>

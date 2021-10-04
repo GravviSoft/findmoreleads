@@ -9,8 +9,9 @@ Rails.application.routes.draw do
     end
   end
   # get '/newquote', to: 'qetquotes#new'
-  # get '/getquote', to: 'qetquotes#show'
+  delete '/deletequote', to: 'qetquotes#destroy'
   get '/startquotes', to: 'quotes#startquote'
+  post '/newquote', to: 'qetquotes#create'
 
   get '/quotes', to: 'quotes#show'
   get '/signup', to: 'users#new'

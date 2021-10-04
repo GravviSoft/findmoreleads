@@ -1,5 +1,6 @@
 class HtmlPagesController < ApplicationController
   def home
+    @qetquote = Qetquote.new
   end
 
   def help

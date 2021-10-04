@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_23_142115) do
+ActiveRecord::Schema.define(version: 2021_10_02_150749) do
 
   create_table "invoice_items", force: :cascade do |t|
     t.string "name"
@@ -39,52 +39,8 @@ ActiveRecord::Schema.define(version: 2021_09_23_142115) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "qetquotes", force: :cascade do |t|
-    t.integer "zip"
-    t.boolean "ownhome"
-    t.boolean "deciding"
-    t.boolean "comparing"
-    t.boolean "ready"
-    t.string "currentinscomp"
-    t.integer "currentrate"
-    t.string "address"
-    t.boolean "singlefam"
-    t.boolean "condo"
-    t.boolean "coop"
-    t.boolean "other"
-    t.boolean "primaryres"
-    t.boolean "duplex"
-    t.boolean "threetofour"
-    t.boolean "mobilehome"
-    t.boolean "manufacturedhome"
-    t.boolean "overthreeyears"
-    t.integer "homeyear"
-    t.integer "sqft"
-    t.string "beds"
-    t.string "bathrooms"
-    t.string "numstories"
-    t.string "homedesign"
-    t.string "roof"
-    t.string "heating"
-    t.string "foundation"
-    t.string "frame"
-    t.string "material"
-    t.boolean "dogs"
-    t.boolean "pool"
-    t.boolean "tramp"
-    t.boolean "rentout"
-    t.boolean "homeforbiz"
-    t.string "firstname"
-    t.string "lastname"
-    t.string "birthdate"
-    t.boolean "gender"
-    t.string "occupation"
-    t.integer "income"
-    t.string "married"
-    t.integer "creditscore"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
+# Could not dump table "qetquotes" because of following StandardError
+#   Unknown type '' for column 'phone'
 
   create_table "quotes", force: :cascade do |t|
     t.string "date"
@@ -93,6 +49,7 @@ ActiveRecord::Schema.define(version: 2021_09_23_142115) do
     t.string "email"
     t.string "phone"
     t.string "readyornot", default: "Sent"
+    t.string "string", default: "Sent"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

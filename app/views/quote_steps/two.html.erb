@@ -10,45 +10,50 @@
     background-color:#e8ecf7;
 
   }
+  select  {
+        font-family: Lora,Georgia,serif;
+        margin: 0;
+        font-size: 1.25rem;
+        font-weight: 400;
+        line-height: 1.75rem;
+        color: #383838;
+        border: 0;
+        width: 100%;
+        padding: .75rem 1.5rem;
+        position: relative;
+        background: white;
+        /* -webkit-appearance: none; */
+    }
+
+.display-4 {
+    font-size: 2.5rem;
+    font-weight: 300;
+}
 </style>
 
-  <br><br><br><br>
   <br><br><br><br><br>
   <div class="row">
-    <div class="col-sm-4">
+    <div class="col-sm-5">
       <h1 class="display-4">Do you own your home?</h1>
 
     </div>
     </div>
-  <div class="col-lg-4">
+  <div class="col-lg-5">
   <div id="containercolor" class="container-fluid">
 
 
 
-<!--
-  <div class="row">
 
-        <h1 class="display-3">Let's get started</h1>
-
-
-      </div> -->
   <br><br>
-
   <div class="col-md-12">
 
-
-
-
-
-
-    <div class="field">
-      <li class="list-group-item" style="align:left"><%= form.label :ownhome, "I don't own my home", value: false %><%= form.radio_button :ownhome, false, :checked => true, :value => false %></li>
-
-      <li class="list-group-item"><%= form.label :ownhome, "I own my home", value: true %><%= form.radio_button :ownhome, true, :value => true %></li>
-
+  <!-- <li class="list-group-item"> -->
+      <%= select(:qetquote, :ownhome, [['I own my home', true], ['I dont own my home', false]]) %>
 
         <div class="actions">
-          <%= link_to "<button class='btn btn-primary btn-lg btn-block'>Next</button>".html_safe, next_wizard_path   %>
+            <br>
+            <%= link_to "<button class='btn btn-primary btn-sm btn-block' style='background-color: #2b11a7;'>Next</button>".html_safe, next_wizard_path%>
+
 
         </div>
 
@@ -56,7 +61,4 @@
       <br>
 
   </div>
-  </div>
-
-  </div>
-  </div>
+  </div>  </div>
