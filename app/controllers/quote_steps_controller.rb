@@ -5,12 +5,10 @@ class QuoteStepsController < ApplicationController
 
   def show
     @qetquote = Qetquote.new
-    @qetuoteurl = Qetquote.last
-    @getquoteurl2 = @qetuoteurl.id
     render_wizard
   end
   def update
-    @qetquote = Qetquote.last
+    @qetquote = Qetquote.find(params[:qetquote])
     @qetquote.update(qetquotes_params)
 
     # @qetquote = Qetquote.find(params[:qetquote])
