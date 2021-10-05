@@ -43,13 +43,14 @@ class QetquotesController < ApplicationController
   # POST /qetquotes or /qetquotes.json
   def create
     @qetquote = Qetquote.new(qetquote_params)
-    respond_to do |format|
+
     if @qetquote.save
       flash[:success] = "Quote was successfully created #{@qetquote.firstname}!"
-
-      format.html { redirect_to @qetquote }
-      format.json { render :show, status: :created, location: @qetquote }
+      redirect_to @qetquote
+      # format.html { redirect_to @qetquote }
+      # format.json { render :show, status: :created, location: @qetquote }
     else
+      respond_to do |format|
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @qetquote.errors, status: :unprocessable_entity }
       end

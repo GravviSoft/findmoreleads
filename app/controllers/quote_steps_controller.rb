@@ -18,13 +18,13 @@ class QuoteStepsController < ApplicationController
     render_wizard @qetquote
   end
   # POST /qetquotes or /qetquotes.json
-  def create
-    @qetquote = Qetquote.create(email: "test@tests.com", firstname: "Test", lastname: "Test", phone: "Test", phone: "5555555555")
-    @qetquote.save
-    redirect_to quote_steps_url
-
-
-  end
+  # def create
+  #   @qetquote = Qetquote.create(email: "test@tests.com", firstname: "Test", lastname: "Test", phone: "Test", phone: "5555555555")
+  #   @qetquote.save
+  #   redirect_to quote_steps_url
+  #
+  #
+  # end
   # def update
   #     @qetquote = Qetquote.create(qetquotes_params)
   #     if @qetquote.save
