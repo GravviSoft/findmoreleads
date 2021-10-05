@@ -99,7 +99,7 @@ select  {
       <div class="col-lg-6">
         <div class="field">
           <%= form.label :phone, "Phone" %>
-          <%= form.telephone_field :phone, class: "form-control"  %>
+          <%= form.telephone_field :phone, minlength: 10, maxlength: 10, class: "form-control"  %>
         </div>
       </div>
     </div>
