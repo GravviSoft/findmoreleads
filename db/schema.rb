@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_02_150749) do
+ActiveRecord::Schema.define(version: 2021_10_05_152644) do
 
   create_table "invoice_items", force: :cascade do |t|
     t.string "name"
@@ -39,8 +39,29 @@ ActiveRecord::Schema.define(version: 2021_10_02_150749) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-# Could not dump table "qetquotes" because of following StandardError
-#   Unknown type '' for column 'phone'
+  create_table "qetquotes", force: :cascade do |t|
+    t.boolean "ownhome"
+    t.boolean "deciding"
+    t.boolean "comparing"
+    t.boolean "ready"
+    t.string "currentinscomp"
+    t.integer "currentrate"
+    t.string "address"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "aptnum"
+    t.string "city"
+    t.string "state"
+    t.integer "zip2"
+    t.string "propertytype"
+    t.integer "annualspend"
+    t.string "email"
+    t.integer "phone", limit: 8
+    t.string "firstname"
+    t.string "lastname"
+    t.boolean "primaryres"
+    t.integer "homeprice"
+  end
 
   create_table "quotes", force: :cascade do |t|
     t.string "date"

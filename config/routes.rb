@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   delete '/deletequote', to: 'qetquotes#destroy'
   get '/startquotes', to: 'quotes#startquote'
   post '/newquote', to: 'qetquotes#create'
+  # put '/editquote', to: 'qetquotes#update'
 
   get '/quotes', to: 'quotes#show'
   get '/signup', to: 'users#new'
