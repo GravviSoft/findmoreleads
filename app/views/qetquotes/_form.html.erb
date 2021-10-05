@@ -250,6 +250,8 @@ select  {
               <%= form.label :homeprice, "What is the current value of the property?" %>
 
               <%= select(:qetquote, :homeprice, [['$49,999 and under', '645'], 	['$50,000 to $74,999', '748'], 	['$75,000 to $99,999', '826'], 	['$100,000 to $124,999', '888'], 	['$125,000 to $149,999', '937'], 	['$150,000 to $174,999', '981'], 	['$175,000 to $199,999', '1018'], 	['$200,000 to $299,999', '1114'], 	['$300,000 to $399,999', '1272'], 	['$400,000 to $499,999', '1482'], 	['$500,000 and above', '2148']]) %>
+<br>
+<%= form.submit "Update", class: "btn btn-primary" %>
 
             </div>
 
@@ -258,12 +260,7 @@ select  {
 
 
 
-  <br>
-
-  <div class="actions">
-
-    <%= form.submit "Update", class: "btn btn-primary" %>
-  </div>
+  
   <br>
   <%= link_to 'Show', @qetquote %> |
   <%= link_to 'Back', qetquotes_path %>
