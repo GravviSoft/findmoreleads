@@ -1,6 +1,6 @@
 # README
 
-Rocket Referrals Developer Project
+Developer Project
 
 
 Purpose:  This project is intended to gauge a candidate’s ability to learn, and implement a new framework quickly. Additionally, it serves as an opportunity for the candidate to share how passionate they are about building something new and confronting a challenge.
