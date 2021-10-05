@@ -1,29 +1,160 @@
 <% provide(:title, 'All Users')%>
+<style>
+  .alert alert{
+    padding-left:20px;
+  }
+  .navbar {
+    background:white;
+  }
+  .navbar li {
+      margin-left : 1em;
+      margin-right : 2em;
 
-<h1>All Users</h1>
+      font-family: Impact, black, sans-serif;
+      font-size: 26px;
+      letter-spacing: 2px;
+      word-spacing: 2px;
+      color: #000000;
+      font-weight: normal;
+      text-decoration: none;
+      font-style: normal;
+      font-variant: normal;
+      text-transform: none;
+  }
+body
+  {margin-top:20px;
+    background:#eee;
+    padding-right:60px;
 
-<table id="albums" class="display" style="width:100%">
-        <thead>
-          <% @users.each do |user| %>
+}
+/* unvisited link */
+a:link {
+  color: blue;
+}
 
-            <tr>
-                	<th class="logo"><%= gravatar_for user, size: 50  %></th>
-                  <th><%= user.firstname %></th>
-                  <th><%= user.lastname %></th>
-                  <th><%= user.email %></th>
-                  <th width="5%"><a type="button" href="<%= signup_path %>" class="btn btn-warning" name="button">New</a></th>
-                  <th width="5%"><a type="button" href="<%= edit_user_path(user.id)%>" class="btn btn-primary" name="button">Edit</a></th>
-                  <th width="5%"><a type="button" href="#" class="btn btn-danger" name="button">Delete</a></th>
+/* mouse over link */
+a:hover {
+  background-color: white;
+  color: dodgerblue;
+}
+/* selected link */
+a:active {
+  color: blue;
+}
+
+.generated-text {
+   font-family:'Lucida Grande', sans-serif;
+   font-size: calc(3vw + 2vmin);
+   color:#3f3aa4;
+   background-color:#ffffff;
+   padding:0px;
+}
+.logo {
+  height: 85px;
+   width: 115px;
+}
+#logo{
+  float: left;
+  margin-right: 3em;
+  font-size: 1.7em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 0px;
+  font-weight: bold;
+  &:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+.card-header{
+    padding: .75rem 1.25rem;
+    background-color: #f5f5f5;
+
+}
+
+#linksyo{
+  font-size: calc(1vw + .8vmin);
 
 
-            </tr>
-        <% end %>
+}
 
-        </thead>
+@media(max-width:575px) {
+	.invoice .top-left,.invoice .top-right,.invoice .payment-details {
+		text-align:center;
+	}
 
-    </table>
+	.invoice .from,.invoice .to,.invoice .payment-details {
+		float:none;
+		width:100%;
+		text-align:center;
+		margin-bottom:25px;
+	}
 
-    <h2 class="title">gsap.to() Basic Usage</h2>
-    <div class="box orange"></div>
-    <div class="box grey"></div>
-    <div class="box green"></div>
+	.invoice p.lead,.invoice .from p.lead,.invoice .to p.lead,.invoice .payment-details p.lead {
+		font-size:22px;
+	}
+
+	.invoice .btn {
+		margin-top:10px;
+	}
+}
+
+@media print {
+	.invoice {
+		width:900px;
+		height:800px;
+
+	}
+
+
+
+
+}</style>
+<br>
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container  bootstrap snippets bootdeys">
+<div class="row">
+  <div class="col-md-12">
+	  	<div class="panel panel-default invoice" id="invoice">
+		  <div class="panel-body">
+        <div class="row">
+
+            <h1 class="generated-text">All Users
+            </h1>
+
+            <hr>
+            <br>
+          </div>
+          <div class="col-md-12">
+            <table id="albums" class="display" style="width:100%">
+                    <thead>
+                      <% @users.each do |user| %>
+
+                        <tr>
+                            	<th class="logo"><%= gravatar_for user, size: 50  %></th>
+                              <th><%= user.firstname %></th>
+                              <th><%= user.lastname %></th>
+                              <th><%= user.email %></th>
+                              <th width="5%"><%= link_to "<button class='btn btn-warning'>Edit</button>".html_safe, edit_user_path(user.id) %></th>
+                              <td><%= link_to "<button class='btn btn-danger'>Destroy</button>".html_safe,  user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+
+                        </tr>
+                    <% end %>
+
+                    </thead>
+
+                </table>
+
+                <div class="box orange"></div>
+                <div class="box grey"></div>
+                <div class="box green"></div>
+            <br>
+
+          </div>
+		  </div>
+		</div>
+	</div>
+</div>

@@ -1,20 +1,141 @@
-<%= provide(:title, "Login") %>
 
-<h1>Login</h1>
+<% provide(:title, 'Login')%>
+<style>
+  .alert alert{
+    padding-left:20px;
+  }
+  .navbar {
+    background:white;
+  }
+  .navbar li {
+      margin-left : 1em;
+      margin-right : 2em;
+
+      font-family: Impact, black, sans-serif;
+      font-size: 26px;
+      letter-spacing: 2px;
+      word-spacing: 2px;
+      color: #000000;
+      font-weight: normal;
+      text-decoration: none;
+      font-style: normal;
+      font-variant: normal;
+      text-transform: none;
+  }
+body
+  {margin-top:20px;
+    background:#eee;
+    padding-right:60px;
+
+}
+/* unvisited link */
+a:link {
+  color: blue;
+}
+
+/* mouse over link */
+a:hover {
+  background-color: white;
+  color: dodgerblue;
+}
+/* selected link */
+a:active {
+  color: blue;
+}
+
+.generated-text {
+   font-family:'Lucida Grande', sans-serif;
+   font-size: calc(3vw + 2vmin);
+   color:#3f3aa4;
+   background-color:#ffffff;
+   padding:0px;
+}
+.logo {
+  height: 85px;
+   width: 115px;
+}
+#logo{
+  float: left;
+  margin-right: 3em;
+  font-size: 1.7em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 0px;
+  font-weight: bold;
+  &:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+}
 
 
+
+@media(max-width:575px) {
+	.invoice .top-left,.invoice .top-right,.invoice .payment-details {
+		text-align:center;
+	}
+
+	.invoice .from,.invoice .to,.invoice .payment-details {
+		float:none;
+		width:100%;
+		text-align:center;
+		margin-bottom:25px;
+	}
+
+	.invoice p.lead,.invoice .from p.lead,.invoice .to p.lead,.invoice .payment-details p.lead {
+		font-size:22px;
+	}
+
+	.invoice .btn {
+		margin-top:10px;
+	}
+}
+
+@media print {
+	.invoice {
+		width:900px;
+		height:800px;
+
+	}
+
+
+
+
+}</style>
+<br>
+
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container  bootstrap snippets bootdeys">
 <div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_with(url: login_path, scope: :session, local: true) do |f| %>
-      <%= f.label :email %>
-      <%= f.email_field :email, class: "form-control" %>
+  <div class="col-md-8 col-md-offset-2">
+	  	<div class="panel panel-default invoice" id="invoice">
+		  <div class="panel-body">
+        <div class="row">
 
-      <%= f.label :password %>
-      <%= f.password_field :password, class: "form-control" %>
+            <h1 class="generated-text">Login
+            </h1>
 
-      <%= f.submit "Login", class: "btn btn-primary" %>
-    <% end %>
-    <p>New User?  <%= link_to "Create Account.", signup_path %></p>
-  </div>
+            <hr>
+            <br>
+          </div>
+          <div class="col-md-8 col-md-offset-2">
+            <%= form_with(url: login_path, scope: :session, local: true) do |f| %>
+              <%= f.label :email %>
+              <%= f.email_field :email, class: "form-control" %>
 
+              <%= f.label :password %>
+              <%= f.password_field :password, class: "form-control" %>
+<br>
+              <%= f.submit "Login", class: "btn btn-primary" %>
+            <% end %>
+            <br>
+            <p><b>New User? </b><%= link_to "Create Account.", signup_path %></p>
+            <br>  <br>
+          </div>
+		  </div>
+		</div>
+	</div>
+</div>
 </div>
