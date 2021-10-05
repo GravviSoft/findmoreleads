@@ -61,7 +61,9 @@ class QetquotesController < ApplicationController
   def update
     respond_to do |format|
       if @qetquote.update(qetquote_params)
-        format.html { redirect_to @qetquote, notice: "Qetquote was successfully updated." }
+        flash[:success] = "Quote was successfully updated!"
+        # redirect_to @qetquote
+        format.html { redirect_to @qetquote }
         format.json { render :show, status: :ok, location: @qetquote }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -74,7 +76,9 @@ class QetquotesController < ApplicationController
   def destroy
     @qetquote.destroy
     respond_to do |format|
-      format.html { redirect_to qetquotes_url, notice: "Qetquote was successfully destroyed." }
+      flash[:danger] = "Quote was successfully deleted!"
+
+      format.html { redirect_to qetquotes_url }
       format.json { head :no_content }
     end
   end
