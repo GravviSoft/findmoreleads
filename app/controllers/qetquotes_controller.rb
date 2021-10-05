@@ -87,6 +87,6 @@ class QetquotesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def qetquote_params
-      params.require(:qetquote).permit(:city, :ownhome, :deciding, :comparing,  :ready, :currentinscomp, :annualspend, :address, :firstname, :lastname, :email, :zip2, :phone, :homeprice)
+      params.require(:qetquote).permit(:city, :state, :address, :firstname, :lastname, :email, :zip2, :phone, :homeprice)
     end
 end
