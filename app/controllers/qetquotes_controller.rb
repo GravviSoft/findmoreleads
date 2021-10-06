@@ -71,7 +71,7 @@ class QetquotesController < ApplicationController
         @client = Twilio::REST::Client.new account_sid, auth_token
         message = @client.messages
           .create(
-             body: "Customer Text\n\nHey #{@qetquote.firstname},\n\nthis is John with Allstate. Thanks for sumbitting your insurance quote.\n\nYour annual home insurance premium would be $#{@qetquote.homeprice}/yr, but i think i could help lower that price for you.  Let's chat, here is a link to my calendar.\n\nhttps://calendly.com/beau-enslow/lead-gen",
+             body: "Customer Text\n\nHey #{@qetquote.firstname},\n\nThis is John with Allstate. Thanks for sumbitting your insurance quote.\n\nYour annual home insurance premium would be $#{@qetquote.homeprice}/yr, but i think i could help lower that price for you.  Let's chat!\n\nHere is a link to my calendar.\n\nhttps://calendly.com/beau-enslow/lead-gen",
              from: "+13103625983",
              to: "+1#{@qetquote.phone}"
            )
