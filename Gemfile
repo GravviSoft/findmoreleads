@@ -14,7 +14,7 @@ gem 'jbuilder'
 # #A library for making beautiful graphs.
 gem 'fusioncharts-rails'
 #setting application ENV Variables
-gem "figaro"
+gem 'figaro'
 #Send text messages from app
 gem 'twilio-ruby'
 #Multi step form

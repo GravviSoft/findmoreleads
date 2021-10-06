@@ -83,7 +83,6 @@ class QetquotesController < ApplicationController
           # "subCaption": "% of sales from campaigns",
           "showValues": "1",
           "showPercentInTooltip": "0",
-          "numberPrefix": "$",
           "enableMultiSlicing": "1",
           "theme": "fusion"
         },
