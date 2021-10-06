@@ -114,6 +114,9 @@ a:active {
 	  	<div class="panel panel-default invoice" id="invoice">
 		  <div class="panel-body">
         <div class="row">
+        <h1>Lead Charts</h1>
+      </div>
+        <div class="row">
 
 
 
@@ -138,6 +141,8 @@ a:active {
   <div class="col-md-12">
 	  	<div class="panel panel-default invoice" id="invoice">
 		  <div class="panel-body">
+
+        <br>
         <div class="row">
 
 
@@ -175,15 +180,17 @@ a:active {
 
 
                 <tr>
+
                     	<th ><%= user.created_at.strftime('%m/%d/%Y')  %></th>
                       <th><%= user.firstname %></th>
                       <th><%= user.lastname %></th>
                       <th><%= user.email %></th>
                       <th><%= user.phone %></th>
-                      <% if user.sold == 'Not Yet' %>
-                      <th><span class="badge badge-secondary" style="background-color:slateblue"><%= user.sold %></span></th>
-                      <% elsif user.sold == 'Sold' %>
+                      <% if user.sold == 'Sold' %>
                       <th><span class="badge badge-success" style="background-color:lightseagreen"><%= user.sold %></span></th>
+
+                      <% elsif user.sold == 'Not Yet' %>
+                      <th><span class="badge badge-secondary" style="background-color:slateblue"><%= user.sold %></span></th>
                       <% end %>
                       <th width="5%"><%= link_to "<button class='btn btn-outline-success'>View</button>".html_safe, qetquote_path(user.id) %></th>
                       <th width="5%"><%= link_to "<button class='btn btn-outline-primary'>Edit</button>".html_safe, edit_qetquote_path(user) %></th>
