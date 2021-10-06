@@ -11,6 +11,11 @@ gem "bundler"
 gem 'turbolinks'
 gem 'jbuilder'
 
+
+
+#setting application ENV Variables
+gem "figaro"
+#Send text messages from app
 gem 'twilio-ruby'
 #Multi step form
 gem 'wicked'

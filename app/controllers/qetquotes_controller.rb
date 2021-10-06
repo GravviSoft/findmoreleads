@@ -54,28 +54,35 @@ class QetquotesController < ApplicationController
     @qetquote = Qetquote.new(qetquote_params)
 
     if @qetquote.save
-      account_sid = "AC8c97a86cc914b3223b22923428e009d1"
-      auth_token = "6af8c91824b14def2892b5c947f7e1b3"
+      account_sid = ENV["TWILIO_ACCOUNT_SID"]
+      auth_token = ENV["TWILIO_AUTH_TOKEN"]
       begin
         @client = Twilio::REST::Client.new account_sid, auth_token
         message = @client.messages
           .create(
-             body: "You have a new lead.  #{@qetquote.firstname} #{@qetquote.lastname} - #{@qetquote.phone}      #{request.base_url}/qetquotes/#{@qetquote.id} ",
+             body: "Insurance Agent Text\n\nYou have a new lead.\n\nName: #{@qetquote.firstname} #{@qetquote.lastname}\n\nPhone: #{@qetquote.phone}\n\nEmail: #{@qetquote.email}\n\nQuote: #{request.base_url}/qetquotes/#{@qetquote.id}",
              from: "+13103625983",
              to: "+1#{@qetquote.phone}"
            )
-        rescue Twilio::REST::TwilioError => e
-            puts e.message
-        end
-      # @client = Twilio::REST::Client.new(account_sid, auth_token)
-      #
-      # message = @client.messages
-      #   .create(
-      #      body: "You have a new lead.  #{@qetquote.firstname} #{@qetquote.lastname} - #{@qetquote.phone}      #{request.base_url}/#{@qetquote.id} ",
-      #      from: "+13103625983",
-      #      to: "+1#{@qetquote.phone}"
-      #    )
-      # puts message.sid
+      rescue Twilio::REST::TwilioError => e
+          puts e.message
+      end
+      begin
+        @client = Twilio::REST::Client.new account_sid, auth_token
+        message = @client.messages
+          .create(
+             body: "Customer Text\n\nHey #{@qetquote.firstname},\n\nthis is John with Allstate. Thanks for sumbitting your insurance quote.\n\nYour annual home insurance premium would be $#{@qetquote.homeprice}/yr, but i think i could help lower that price for you.  Let's chat, here is a link to my calendar.\n\nhttps://calendly.com/beau-enslow/lead-gen",
+             from: "+13103625983",
+             to: "+1#{@qetquote.phone}"
+           )
+      rescue Twilio::REST::TwilioError => e
+          puts e.message
+      end
+
+
+      # send a signup email to the user, pass in the user object that   contains the user's email address
+
+
       flash[:success] = "Quote was successfully created #{@qetquote.firstname}!"
       redirect_to @qetquote
       # format.html { redirect_to @qetquote }
