@@ -60,7 +60,7 @@ class QetquotesController < ApplicationController
         @client = Twilio::REST::Client.new account_sid, auth_token
         message = @client.messages
           .create(
-             body: "You have a new lead.  #{@qetquote.firstname} #{@qetquote.lastname} - #{@qetquote.phone}      #{request.base_url}/#{@qetquote.id} ",
+             body: "You have a new lead.  #{@qetquote.firstname} #{@qetquote.lastname} - #{@qetquote.phone}      #{request.base_url}/qetquotes/#{@qetquote.id} ",
              from: "+13103625983",
              to: "+1#{@qetquote.phone}"
            )
