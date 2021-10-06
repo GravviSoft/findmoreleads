@@ -11,6 +11,7 @@ gem "bundler"
 gem 'turbolinks'
 gem 'jbuilder'
 
+gem 'twilio-ruby'
 #Multi step form
 gem 'wicked'
 #Greensock animation

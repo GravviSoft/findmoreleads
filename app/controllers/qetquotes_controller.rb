@@ -1,3 +1,12 @@
+# Download the helper library from https://www.twilio.com/docs/ruby/install
+require 'rubygems'
+require 'twilio-ruby'
+
+# Find your Account SID and Auth Token at twilio.com/console
+# and set the environment variables. See http://twil.io/secure
+
+
+
 class QetquotesController < ApplicationController
   before_action :set_qetquote, only: %i[ show edit update destroy ]
 
@@ -45,6 +54,17 @@ class QetquotesController < ApplicationController
     @qetquote = Qetquote.new(qetquote_params)
 
     if @qetquote.save
+      account_sid = "AC8c97a86cc914b3223b22923428e009d1"
+      auth_token = 'fe60a604fd08394673950dbbf20a6a88'
+      @client = Twilio::REST::Client.new(account_sid, auth_token)
+
+      message = @client.messages
+        .create(
+           body: "You have a new lead.  #{@qetquote.firstname} #{@qetquote.lastname} - #{@qetquote.phone}               #{request.base_url}/#{@qetquote.id} ",
+           from: '+13103625983',
+           to: "1#{@qetquote.phone}"
+         )
+      puts message.sid
       flash[:success] = "Quote was successfully created #{@qetquote.firstname}!"
       redirect_to @qetquote
       # format.html { redirect_to @qetquote }
