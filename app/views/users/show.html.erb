@@ -121,13 +121,25 @@ a:active {
             <br>
           </div>
           <div class="col-md-8 col-md-offset-2">
-            <section class="user_info"
-              <h1>
+            <table id="albums" class="display" style="width:100%">
+                    <thead>
 
-                <%= gravatar_for @user%>
-                <%= @user.firstname%> <%=@user.lastname%>
-              </h1>
-            </section>
+                        <tr>
+                              <th class="logo"><%= gravatar_for @user, size: 50  %></th>
+                              <th><%= @user.firstname %></th>
+                              <th><%= @user.lastname %></th>
+                              <th><%= @user.email %></th>
+                              <th width="5%"><%= link_to "<button class='btn btn-warning'>Edit</button>".html_safe, edit_user_path(@user.id) %></th>
+                              <td><%= link_to "<button class='btn btn-danger'>Destroy</button>".html_safe,  @user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+
+                        </tr>
+                  
+
+                    </thead>
+
+                </table>
+
             <br>
 
           </div>
