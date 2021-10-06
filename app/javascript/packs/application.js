@@ -11,6 +11,21 @@ require("channels")
 // require("greensock/easing/EasePack")
 // require("greensock/jquery.gsap.js")
 require("jquery")
+var FusionCharts = require("src/fusioncharts/fusioncharts");
+
+// Require charts from fusioncharts
+var Charts = require("src/fusioncharts/fusioncharts.charts");
+
+// Require export module from fusioncharts
+var ExcelExport = require("src/fusioncharts/fusioncharts.excelexport");
+
+// Require theme from fusioncharts
+var FusionTheme = require("src/fusioncharts/themes/fusioncharts.theme.fusion");
+
+// Add charts and themes and export module as dependency
+Charts(FusionCharts);
+FusionTheme(FusionCharts);
+ExcelExport(FusionCharts);
 import "bootstrap"
 
 // Uncomment to copy all static images under ../images to the output folder and reference

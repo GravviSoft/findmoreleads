@@ -11,8 +11,10 @@ gem "bundler"
 gem 'turbolinks'
 gem 'jbuilder'
 
-
-
+# #A library for making beautiful graphs.
+gem 'fusioncharts-rails'
+# #ImageMagick image processing library
+# gem 'rmagick'
 #setting application ENV Variables
 gem "figaro"
 #Send text messages from app

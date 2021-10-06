@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_05_152644) do
+ActiveRecord::Schema.define(version: 2021_10_06_163404) do
 
   create_table "invoice_items", force: :cascade do |t|
     t.string "name"
@@ -59,7 +59,7 @@ ActiveRecord::Schema.define(version: 2021_10_05_152644) do
     t.integer "phone", limit: 8
     t.string "firstname"
     t.string "lastname"
-    t.boolean "primaryres"
+    t.string "sold", default: "Not Yet"
     t.integer "homeprice"
   end
 

@@ -1,7 +1,8 @@
 # Download the helper library from https://www.twilio.com/docs/ruby/install
 require 'rubygems'
 require 'twilio-ruby'
-
+require 'fusioncharts-rails'
+require 'json'
 # Find your Account SID and Auth Token at twilio.com/console
 # and set the environment variables. See http://twil.io/secure
 
@@ -13,6 +14,119 @@ class QetquotesController < ApplicationController
   # GET /qetquotes or /qetquotes.json
   def index
     @qetquotes = Qetquote.all
+
+
+
+    # Chart appearance configuration
+    chartAppearancesConfigObj = Hash.new
+    chartAppearancesConfigObj = {
+                    "caption" => "Countries With Most Oil Reserves [2017-18]",
+                    "subCaption" => "In MMbbl = One Million barrels",
+                    "xAxisName" => "Country",
+                    "yAxisName" => "Reserves (MMbbl)",
+                    "numberSuffix" => "D",
+                    "theme" => "fusion"
+                }
+
+    # An array of hash objects which stores data
+    chartDataObj = [
+                {"Venezuela" => "290"},
+                {"Saudi" => "260"},
+                {"Canada" => "180"},
+                {"Iran" => "140"},
+                {"Russia" => "115"},
+                {"UAE" => "100"},
+                {"US" => "30"},
+                {"China" => "30"}
+            ]
+
+    # Chart data template to store data in "Label" & "Value" format
+    labelValueTemplate = "{ \"label\": \"%s\", \"value\": \"%s\" },"
+
+    # Chart data as JSON string
+    labelValueJSONStr = ""
+
+    chartDataObj.each {|item|
+        data = labelValueTemplate % [item.keys[0], item[item.keys[0]]]
+        labelValueJSONStr.concat(data)
+    }
+
+    # Removing trailing comma character
+    labelValueJSONStr = labelValueJSONStr.chop
+
+    # Chart JSON data template
+    chartJSONDataTemplate = "{ \"chart\": %s, \"data\": [%s] }"
+
+    # Final Chart JSON data from template
+    chartJSONDataStr = chartJSONDataTemplate % [chartAppearancesConfigObj.to_json, labelValueJSONStr]
+
+    # Chart rendering
+    @chart2 = Fusioncharts::Chart.new({
+            width: "460",
+            height: "400",
+            type: "column2d",
+            renderAt: "chartContainer2",
+            dataSource: chartJSONDataStr
+        })
+
+
+    @thelist = []
+    Qetquote.group(:sold).count.each do |name, count|
+      @thelist.append({
+        "label": "#{name}",
+        "value": "#{count}"
+      })
+      @chartData = {
+
+        "chart": {
+          # "caption": "Sold Chart",
+          # "subCaption": "% of sales from campaigns",
+          "showValues": "1",
+          "showPercentInTooltip": "0",
+          "numberPrefix": "$",
+          "enableMultiSlicing": "1",
+          "theme": "fusion"
+        },
+          "data":
+
+            @thelist
+
+        }
+        # @chartData2 = {
+        #
+        #   "chart": {
+        #     "caption": "Countries With Most Oil Reserves [2017-18]",
+        #     "subCaption": "In MMbbl = One Million barrels",
+        #     "xAxisName": "Country",
+        #     "yAxisName": "Reserves (MMbbl)",
+        #     "numberSuffix": "K",
+        #     "theme": "fusion",
+        #   },
+        #     "data":
+        #
+        #       @thelist
+        #
+        #   }
+      # Chart rendering
+      @chart = Fusioncharts::Chart.new({
+              width: "500",
+              height: "400",
+              type: "pie3d",
+              renderAt: "chartContainer",
+              dataSource: @chartData
+          })
+      # @chart2 = Fusioncharts::Chart.new({
+      #         width: "500",
+      #         height: "400",
+      #         type: "MSColumn2D",
+      #         renderAt: "chartContainer2",
+      #         dataSource: @chartDataBarChart
+      #     })
+
+
+
+
+    end
   end
 
   # GET /qetquotes/1 or /qetquotes/1.json
@@ -129,6 +243,6 @@ class QetquotesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def qetquote_params
-      params.require(:qetquote).permit(:city, :state, :address, :firstname, :lastname, :email, :zip2, :phone, :homeprice)
+      params.require(:qetquote).permit(:sold, :city, :state, :address, :firstname, :lastname, :email, :zip2, :phone, :homeprice)
     end
 end

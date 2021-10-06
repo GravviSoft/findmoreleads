@@ -1,24 +1,157 @@
 
 <% provide(:title, 'Quotes')%>
 <style>
+  .badge badge-primary{
+      background-color: #666666
+   }
+  .alert alert{
+    padding-left:20px;
+  }
   .navbar {
     background:white;
   }
-  .footer {
-    display: none;
+  .navbar li {
+      margin-left : 1em;
+      margin-right : 2em;
+
+      font-family: Impact, black, sans-serif;
+      font-size: 26px;
+      letter-spacing: 2px;
+      word-spacing: 2px;
+      color: #000000;
+      font-weight: normal;
+      text-decoration: none;
+      font-style: normal;
+      font-variant: normal;
+      text-transform: none;
   }
-  .logo {
-    height: 85px;
-     width: 115px;
+body
+  {margin-top:20px;
+    background:#eee;
+    padding-right:60px;
+
+}
+/* unvisited link */
+a:link {
+  color: blue;
+}
+
+/* mouse over link */
+a:hover {
+  background-color: white;
+  color: dodgerblue;
+}
+/* selected link */
+a:active {
+  color: blue;
+}
+
+.generated-text {
+   font-family:'Lucida Grande', sans-serif;
+   font-size: calc(3vw + 2vmin);
+   color:#3f3aa4;
+   background-color:#ffffff;
+   padding:0px;
+}
+.logo {
+  height: 85px;
+   width: 115px;
+}
+#logo{
+  float: left;
+  margin-right: 3em;
+  font-size: 1.7em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 0px;
+  font-weight: bold;
+  &:hover {
+    color: #fff;
+    text-decoration: none;
   }
-  body {
-    background:white;
+}
 
 
 
-  }
-</style>
-<br><br><br>
+@media(max-width:575px) {
+	.invoice .top-left,.invoice .top-right,.invoice .payment-details {
+		text-align:center;
+	}
+
+	.invoice .from,.invoice .to,.invoice .payment-details {
+		float:none;
+		width:100%;
+		text-align:center;
+		margin-bottom:25px;
+	}
+
+	.invoice p.lead,.invoice .from p.lead,.invoice .to p.lead,.invoice .payment-details p.lead {
+		font-size:22px;
+	}
+
+	.invoice .btn {
+		margin-top:10px;
+	}
+}
+
+@media print {
+	.invoice {
+		width:900px;
+		height:800px;
+
+	}
+
+
+
+
+}</style>
+<br>
+
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container  bootstrap snippets bootdeys">
+<div class="row">
+  <div class="col-md-12">
+	  	<div class="panel panel-default invoice" id="invoice">
+		  <div class="panel-body">
+        <div class="row">
+
+
+
+              <div class="col-md-5" id="chartContainer"></div>
+              <%=@chart.render() %>
+              <div class="col-md-5" id="chartContainer2"></div>
+              <%=@chart2.render() %>
+            </div>
+            <br/>
+          </div>
+		  </div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+<div class="container  bootstrap snippets bootdeys">
+<div class="row">
+  <div class="col-md-12">
+	  	<div class="panel panel-default invoice" id="invoice">
+		  <div class="panel-body">
+        <div class="row">
+
+
+
+              <div class="col-md-6" id="chartContainer"></div>
+              <%=@chart.render() %>
+              <div class="col-md-6" id="chartContainer2"></div>
+              <%=@chart2.render() %>
+            </div>
+            <br/>
+
+
 <h1>All Quotes Submitted</h1>
 
 <br>
@@ -40,8 +173,8 @@
 
   <tbody>
 
-
               <% @qetquotes.each do |user| %>
+
 
                 <tr>
                     	<th ><%= user.created_at.strftime('%m/%d/%Y')  %></th>
@@ -49,10 +182,14 @@
                       <th><%= user.lastname %></th>
                       <th><%= user.email %></th>
                       <th><%= user.phone %></th>
-                      <th><span class="badge badge-success">Quote Sent</span></th>
-                      <th width="5%"><%= link_to "<button class='btn btn-success'>View</button>".html_safe, qetquote_path(user.id) %></th>
-                      <th width="5%"><%= link_to "<button class='btn btn-primary'>Edit</button>".html_safe, edit_qetquote_path(user) %></th>
-                      <td><%= link_to "<button class='btn btn-danger'>Destroy</button>".html_safe,  user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                      <% if user.sold == 'Not Yet' %>
+                      <th><span class="badge badge-secondary" style="background-color:slateblue"><%= user.sold %></span></th>
+                      <% elsif user.sold == 'Sold' %>
+                      <th><span class="badge badge-success" style="background-color:lightseagreen"><%= user.sold %></span></th>
+                      <% end %>
+                      <th width="5%"><%= link_to "<button class='btn btn-outline-success'>View</button>".html_safe, qetquote_path(user.id) %></th>
+                      <th width="5%"><%= link_to "<button class='btn btn-outline-primary'>Edit</button>".html_safe, edit_qetquote_path(user) %></th>
+                      <td><%= link_to "<button class='btn btn-outline-danger'>Destroy</button>".html_safe,  user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 
 
                 </tr>
@@ -62,7 +199,11 @@
 
         </table>
 
-
+      </div>
+  </div>
+</div>
+</div>
+</div>
 
         <script>
           gsap.from("#logo", {duration: 3, x: 300, opacity: 0, scale: 0.5});
