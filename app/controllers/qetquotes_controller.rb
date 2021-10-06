@@ -55,16 +55,27 @@ class QetquotesController < ApplicationController
 
     if @qetquote.save
       account_sid = "AC8c97a86cc914b3223b22923428e009d1"
-      auth_token = 'fe60a604fd08394673950dbbf20a6a88'
-      @client = Twilio::REST::Client.new(account_sid, auth_token)
-
-      message = @client.messages
-        .create(
-           body: "You have a new lead.  #{@qetquote.firstname} #{@qetquote.lastname} - #{@qetquote.phone}               #{request.base_url}/#{@qetquote.id} ",
-           from: '+13103625983',
-           to: "1#{@qetquote.phone}"
-         )
-      puts message.sid
+      auth_token = "6af8c91824b14def2892b5c947f7e1b3"
+      begin
+        @client = Twilio::REST::Client.new account_sid, auth_token
+        message = @client.messages
+          .create(
+             body: "You have a new lead.  #{@qetquote.firstname} #{@qetquote.lastname} - #{@qetquote.phone}      #{request.base_url}/#{@qetquote.id} ",
+             from: "+13103625983",
+             to: "+1#{@qetquote.phone}"
+           )
+        rescue Twilio::REST::TwilioError => e
+            puts e.message
+        end
+      # @client = Twilio::REST::Client.new(account_sid, auth_token)
+      #
+      # message = @client.messages
+      #   .create(
+      #      body: "You have a new lead.  #{@qetquote.firstname} #{@qetquote.lastname} - #{@qetquote.phone}      #{request.base_url}/#{@qetquote.id} ",
+      #      from: "+13103625983",
+      #      to: "+1#{@qetquote.phone}"
+      #    )
+      # puts message.sid
       flash[:success] = "Quote was successfully created #{@qetquote.firstname}!"
       redirect_to @qetquote
       # format.html { redirect_to @qetquote }
