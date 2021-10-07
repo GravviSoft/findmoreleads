@@ -182,10 +182,10 @@ a:active {
                       <th><%= user.email %></th>
                       <th><%= user.phone %></th>
                       <% if user.sold == 'Sold' %>
-                      <th><span class="badge badge-success" style="background-color:lightseagreen"><%= user.sold %></span></th>
+                      <th><span class="badge badge-secondary" style="background-color:slateblue"><%= user.sold %></span></th>
 
                       <% elsif user.sold == 'Not Yet' %>
-                      <th><span class="badge badge-secondary" style="background-color:slateblue"><%= user.sold %></span></th>
+                      <th><span class="badge badge-success" style="background-color:lightseagreen"><%= user.sold %></span></th>
                       <% end %>
                       <th width="5%"><%= link_to "<button class='btn btn-outline-success'>View</button>".html_safe, qetquote_path(user.id) %></th>
                       <th width="5%"><%= link_to "<button class='btn btn-outline-primary'>Edit</button>".html_safe, edit_qetquote_path(user) %></th>
