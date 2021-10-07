@@ -15,6 +15,38 @@ class QetquotesController < ApplicationController
   def index
     @qetquotes = Qetquote.all
 
+    @thelist = []
+    Qetquote.group(:sold).count.each do |name, count|
+      @thelist.append({
+        "label": "#{name}",
+        "value": "#{count}"
+      })
+      @chartData = {
+
+        "chart": {
+          # "caption": "Sold Chart",
+          # "subCaption": "% of sales from campaigns",
+          "showValues": "1",
+          "showPercentInTooltip": "0",
+          "enableMultiSlicing": "1",
+          "theme": "fusion"
+        },
+          "data":
+
+            @thelist
+
+        }
+
+      @chart = Fusioncharts::Chart.new({
+              width: "500",
+              height: "400",
+              type: "pie3d",
+              renderAt: "chartContainer",
+              dataSource: @chartData
+          })
+
+    end
+
 
 
     # Chart appearance configuration
@@ -70,37 +102,7 @@ class QetquotesController < ApplicationController
         })
 
 
-    @thelist = []
-    Qetquote.group(:sold).count.each do |name, count|
-      @thelist.append({
-        "label": "#{name}",
-        "value": "#{count}"
-      })
-      @chartData = {
 
-        "chart": {
-          # "caption": "Sold Chart",
-          # "subCaption": "% of sales from campaigns",
-          "showValues": "1",
-          "showPercentInTooltip": "0",
-          "enableMultiSlicing": "1",
-          "theme": "fusion"
-        },
-          "data":
-
-            @thelist
-
-        }
-
-      @chart = Fusioncharts::Chart.new({
-              width: "500",
-              height: "400",
-              type: "pie3d",
-              renderAt: "chartContainer",
-              dataSource: @chartData
-          })
-
-    end
   end
 
   # GET /qetquotes/1 or /qetquotes/1.json
