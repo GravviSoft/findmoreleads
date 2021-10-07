@@ -26,7 +26,6 @@ class QetquotesController < ApplicationController
       puts "horse"
     end
 
-
     @chart2 =
       Fusioncharts::Chart.new(
         {
