@@ -113,19 +113,18 @@ a:active {
   <div class="col-md-12">
 	  	<div class="panel panel-default invoice" id="invoice">
 		  <div class="panel-body">
-        <div class="row"><br>
-        <center><h3>Quote Analytics</h3></center>
-      </div>
+
         <div class="row">
 
+          <center><h2 style=padding-right:30px>Analytics</h2></center>
 
 
-              <div class="col-md-5" id="chartContainer"></div>
+              <div class="col-md-6" id="chartContainer"></div>
               <%=@chart.render() %>
-              <div class="col-md-5" id="chartContainer2"></div>
+              <div class="col-md-6" id="chartContainer2"></div>
               <%=@chart2.render() %>
             </div>
-
+            <br/>
           </div>
 		  </div>
 		</div>
@@ -145,6 +144,14 @@ a:active {
         <br>
         <div class="row">
 
+
+
+              <div class="col-md-6" id="chartContainer"></div>
+              <%=@chart.render() %>
+              <div class="col-md-6" id="chartContainer2"></div>
+              <%=@chart2.render() %>
+            </div>
+            <br/>
 
             <center><h3>Quotes Submitted</h3></center>
 
