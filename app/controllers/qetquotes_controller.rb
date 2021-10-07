@@ -14,6 +14,40 @@ class QetquotesController < ApplicationController
   # GET /qetquotes or /qetquotes.json
   def index
     @qetquotes = Qetquote.all
+    @thelist2 = []
+
+    Qetquote.group('DATE(created_at)', :sold).sum(:homeprice).each do |item, price|
+    if item[1] == "Sold"
+      @thelist2.append({
+        "label": "#{item[0]}",
+        "value": "#{price}"
+      })
+    else
+      puts "horse"
+    end
+
+
+    @chart2 =
+      Fusioncharts::Chart.new(
+        {
+          width: '400',
+          height: '400',
+          type: 'column3d',
+          renderAt: 'chartContainer2',
+          dataSource: {
+            :"chart" => {
+              :"caption" => 'Total Premium Amount Sold',
+              # :"subcaption" => 'For the year 2017',
+              :"yaxisname" => 'Amount',
+              :"decimals" => '1',
+              :"theme" => 'fusion'
+            },
+            :"data" => @thelist2
+          }
+        }
+      )
+
+    end
 
     @thelist = []
     Qetquote.group(:sold).count.each do |name, count|
@@ -45,61 +79,8 @@ class QetquotesController < ApplicationController
               dataSource: @chartData
           })
 
-    end
+      end
 
-
-
-    # Chart appearance configuration
-    chartAppearancesConfigObj = Hash.new
-    chartAppearancesConfigObj = {
-                    "caption" => "Countries With Most Oil Reserves [2017-18]",
-                    "subCaption" => "In MMbbl = One Million barrels",
-                    "xAxisName" => "Country",
-                    "yAxisName" => "Reserves (MMbbl)",
-                    "numberSuffix" => "D",
-                    "theme" => "fusion"
-                }
-
-    # An array of hash objects which stores data
-    chartDataObj = [
-                {"Venezuela" => "290"},
-                {"Saudi" => "260"},
-                {"Canada" => "180"},
-                {"Iran" => "140"},
-                {"Russia" => "115"},
-                {"UAE" => "100"},
-                {"US" => "30"},
-                {"China" => "30"}
-            ]
-
-    # Chart data template to store data in "Label" & "Value" format
-    labelValueTemplate = "{ \"label\": \"%s\", \"value\": \"%s\" },"
-
-    # Chart data as JSON string
-    labelValueJSONStr = ""
-
-    chartDataObj.each {|item|
-        data = labelValueTemplate % [item.keys[0], item[item.keys[0]]]
-        labelValueJSONStr.concat(data)
-    }
-
-    # Removing trailing comma character
-    labelValueJSONStr = labelValueJSONStr.chop
-
-    # Chart JSON data template
-    chartJSONDataTemplate = "{ \"chart\": %s, \"data\": [%s] }"
-
-    # Final Chart JSON data from template
-    chartJSONDataStr = chartJSONDataTemplate % [chartAppearancesConfigObj.to_json, labelValueJSONStr]
-
-    # Chart rendering
-    @chart2 = Fusioncharts::Chart.new({
-            width: "460",
-            height: "400",
-            type: "column2d",
-            renderAt: "chartContainer2",
-            dataSource: chartJSONDataStr
-        })
 
 
 

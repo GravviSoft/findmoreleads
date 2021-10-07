@@ -1,6 +1,11 @@
 
 <% provide(:title, 'Quotes')%>
 <style>
+.container{
+  width: 1600px;
+
+
+}
 
   .alert alert{
     padding-left:20px;
@@ -71,8 +76,12 @@ a:active {
 }
 
 
+.white-box{
+  background-color: white;
 
-@media(max-width:575px) {
+}
+
+/* @media(max-width:575px) {
 	.invoice .top-left,.invoice .top-right,.invoice .payment-details {
 		text-align:center;
 	}
@@ -98,7 +107,7 @@ a:active {
 		width:900px;
 		height:800px;
 
-	}
+	} */
 
 
 
@@ -108,14 +117,12 @@ a:active {
 
 
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-<div style="padding-right:80px" class="container  bootstrap snippets bootdeys">
+<div id="whitecontainers"  class="white-box">
 <div class="row">
   <div class="col-md-12">
-	  	<div class="panel panel-default invoice" id="invoice">
-		  <div class="panel-body">
 
-        <div class="row">
 
+<br>
           <center><h2 style=padding-right:30px>Analytics</h2></center>
 
 
@@ -127,38 +134,27 @@ a:active {
             <br/>
           </div>
 		  </div>
-		</div>
-	</div>
-</div>
 
 
 
+<br>
 
 
-<div style="padding-right:80px" class="container  bootstrap snippets bootdeys">
+
+<div id="whitecontainers" class="white-box">
 <div class="row">
   <div class="col-md-12">
-	  	<div class="panel panel-default invoice" id="invoice">
-		  <div class="panel-body">
 
         <br>
-        <div class="row">
 
 
-
-              <div class="col-md-6" id="chartContainer"></div>
-              <%=@chart.render() %>
-              <div class="col-md-6" id="chartContainer2"></div>
-              <%=@chart2.render() %>
-            </div>
-            <br/>
 
             <center><h3>Quotes Submitted</h3></center>
 
 
 <br>
-
-<table id="albums" class="table" style="width:100%">
+  <center>
+<table id="albums" class="table" style="width:95%">
   <thead>
     <tr>
       <th>Date</th>
@@ -202,12 +198,11 @@ a:active {
             </tbody>
 
         </table>
-
+  </center>
       </div>
   </div>
 </div>
-</div>
-</div>
+
 
         <script>
           gsap.from("#logo", {duration: 3, x: 300, opacity: 0, scale: 0.5});
