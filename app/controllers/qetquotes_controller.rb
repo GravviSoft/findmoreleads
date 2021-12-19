@@ -11,9 +11,18 @@ require 'json'
 class QetquotesController < ApplicationController
   before_action :set_qetquote, only: %i[ show edit update destroy ]
 
+
   # GET /qetquotes or /qetquotes.json
   def index
-    @qetquotes = Qetquote.all
+    @q = Qetquote.ransack(params[:q])
+    @qetquotes = @q.result
+
+
+    # if params[:search].present?
+    #   search_type = params[:search]
+    #   @qetquotes=Qetquote.all.map(&search_type.to_sym)
+    # end
+
     @thelist2 = []
 
     Qetquote.group('DATE(created_at)', :sold).sum(:homeprice).each do |item, price|
@@ -49,7 +58,7 @@ class QetquotesController < ApplicationController
     end
 
     @thelist = []
-    Qetquote.group(:sold).count.each do |name, count|
+    Qetquote.group(:industry).count.each do |name, count|
       @thelist.append({
         "label": "#{name}",
         "value": "#{count}"

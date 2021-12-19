@@ -6,6 +6,7 @@
 
 
 }
+/* created_at_or_firstname_or_lastname_or_email_or_phone_or_industry_cont */
 
   .alert alert{
     padding-left:20px;
@@ -81,33 +82,27 @@ a:active {
 
 }
 
-/* @media(max-width:575px) {
-	.invoice .top-left,.invoice .top-right,.invoice .payment-details {
-		text-align:center;
-	}
 
-	.invoice .from,.invoice .to,.invoice .payment-details {
-		float:none;
-		width:100%;
-		text-align:center;
-		margin-bottom:25px;
-	}
 
-	.invoice p.lead,.invoice .from p.lead,.invoice .to p.lead,.invoice .payment-details p.lead {
-		font-size:22px;
-	}
 
-	.invoice .btn {
-		margin-top:10px;
-	}
-}
 
-@media print {
-	.invoice {
-		width:900px;
-		height:800px;
 
-	} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -134,12 +129,7 @@ a:active {
             <br/>
           </div>
 		  </div>
-
-
-
 <br>
-
-
 
 <div id="whitecontainers" class="white-box">
 <div class="row">
@@ -149,14 +139,58 @@ a:active {
 
 
 
-            <center><h3>Quotes Submitted</h3></center>
+            <center><h3>Lead Dashboard</h3></center>
 
 
 <br>
+
+
   <center>
+
+
+
 <table id="albums" class="table" style="width:95%">
   <thead>
+
     <tr>
+
+      <th><%= sort_link(@q, :created_at) do %>
+            <strong>Date</strong>
+          <% end %>
+      </th>
+      <th><%= sort_link(@q, :firstname) do %>
+            <strong>First</strong>
+          <% end %>
+      </th>
+      <th><%= sort_link(@q, :lastname) do %>
+            <strong>Last</strong>
+          <% end %>
+      </th>
+      <th><%= sort_link(@q, :email) do %>
+            <strong>Email</strong>
+          <% end %>
+      </th>
+      <th><%= sort_link(@q, :phone) do %>
+            <strong>Phone</strong>
+          <% end %>
+      </th>
+      <th><%= sort_link(@q, :industry) do %>
+            <strong>Industry</strong>
+          <% end %>
+      </th>
+
+          <%= search_form_for @q do |f| %>
+            <th colspan="3">
+
+            <%= f.search_field :firstname_or_lastname_or_email_or_phone_or_industry_cont%>
+            <%= f.submit %>
+            </th>
+          <% end %>
+
+    </tr>
+
+
+    <!-- <tr>
       <th>Date</th>
       <th>First</th>
       <th>Last</th>
@@ -166,7 +200,7 @@ a:active {
       <th></th>
       <th></th>
       <th></th>
-    </tr>
+    </tr> -->
   </thead>
 
   <tbody>
@@ -181,12 +215,9 @@ a:active {
                       <th><%= user.lastname %></th>
                       <th><%= user.email %></th>
                       <th><%= user.phone %></th>
-                      <% if user.sold == 'Sold' %>
-                      <th><span class="badge badge-success" style="background-color:lightseagreen"><%= user.sold %></span></th>
+                      <th><%= user.industry %></th>
 
-                      <% elsif user.sold == 'Not Yet' %>
-                      <th><span class="badge badge-secondary" style="background-color:slateblue"><%= user.sold %></span></th>
-                      <% end %>
+
                       <th width="5%"><%= link_to "<button class='btn btn-outline-success'>View</button>".html_safe, qetquote_path(user.id) %></th>
                       <th width="5%"><%= link_to "<button class='btn btn-outline-primary'>Edit</button>".html_safe, edit_qetquote_path(user) %></th>
                       <td><%= link_to "<button class='btn btn-outline-danger'>Destroy</button>".html_safe,  user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -211,4 +242,20 @@ a:active {
 
 <br>
 
-<%= link_to 'New Qetquote', new_qetquote_path %>
+<!--
+                    <th><span class="badge badge-success" style="background-color:lightseagreen">
+
+
+
+
+                    <th><span class="badge badge-secondary" style="background-color:slateblue"> -->
+
+
+
+                    <style>
+                      var table = $("#albums").DataTable({
+                       "paging": true,
+                       "ordering": true,
+                       "searching": true
+                    });
+                    </style>

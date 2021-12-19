@@ -28,5 +28,8 @@ class Invoice < ApplicationRecord
     def status_class
         STATUS_CLASS[self.status.to_sym]
     end
+    ransacker :phone do
+      Arel.sql("to_char(\"#{qetquotes}\".\"phone\", '99999')")
+    end
 
 end
