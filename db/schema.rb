@@ -61,7 +61,6 @@ ActiveRecord::Schema.define(version: 2021_12_18_235723) do
     t.string "lastname"
     t.string "sold", default: "Not Yet"
     t.integer "homeprice"
-    t.string "industry"
   end
 
   create_table "quotes", force: :cascade do |t|
