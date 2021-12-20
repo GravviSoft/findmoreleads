@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_18_235723) do
+ActiveRecord::Schema.define(version: 2021_12_20_040510) do
 
   create_table "invoice_items", force: :cascade do |t|
     t.string "name"
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 2021_12_18_235723) do
     t.string "currentinscomp"
     t.integer "currentrate"
     t.string "address"
+    t.string "sold", default: "Not Yet"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "aptnum"
@@ -59,8 +60,8 @@ ActiveRecord::Schema.define(version: 2021_12_18_235723) do
     t.string "phone", limit: 8
     t.string "firstname"
     t.string "lastname"
-    t.string "sold", default: "Not Yet"
     t.integer "homeprice"
+    t.string "industry"
   end
 
   create_table "quotes", force: :cascade do |t|
