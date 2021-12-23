@@ -10,7 +10,8 @@ gem 'webpacker'
 gem "bundler"
 gem 'turbolinks'
 gem 'jbuilder'
-
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
 # #A library for making beautiful graphs.
 gem 'fusioncharts-rails'
 #setting application ENV Variables

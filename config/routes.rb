@@ -14,8 +14,6 @@ Rails.application.routes.draw do
   get '/startquotes', to: 'quotes#startquote'
   post '/newquote', to: 'qetquotes#create'
 
-
-
   # DELETE /leads/:id(.:format)
   delete '/deletelead', to: 'leads#destroy'
   # PATCH  /leads/:id(.:format)
@@ -27,11 +25,14 @@ Rails.application.routes.draw do
   get '/leads', to: 'leads#index'
 
 
-  get '/quotes', to: 'quotes#show'
 
   get '/quotes', to: 'quotes#show'
+  get '/quotes', to: 'quotes#show'
   get '/signup', to: 'users#new'
+
+
   root 'html_pages#home'
+
   get '/help', to: 'html_pages#help'
   get '/about', to: 'html_pages#about'
   get '/pricing', to: 'html_pages#pricing'
@@ -39,6 +40,10 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
+
+  get 'password/reset',to: 'password_reset#new'
+  post 'password#index', to: 'password_reset#ceate'
+
   resources :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

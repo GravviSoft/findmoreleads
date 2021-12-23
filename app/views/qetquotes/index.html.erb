@@ -2,7 +2,7 @@
 <% provide(:title, 'Quotes')%>
 <style>
 .container{
-  width: 3900px;
+  width: calc(400vw + 100vmin);
 
 
 }
@@ -32,7 +32,8 @@
 body
   {margin-top:20px;
     background:#eee;
-    padding-right:60px;
+    padding-right:0px;
+    margin-bottom:0px;
 
 }
 /* unvisited link */
@@ -79,7 +80,8 @@ a:active {
 
 .white-box{
   background-color: white;
-
+  margin-left : -12em;
+  margin-right : -12em;
 
 }
 
@@ -149,8 +151,8 @@ a:active {
   <center>
 
 
-
-<table id="albums" class="table" style="width:95%">
+<% will_paginate  %>
+<table id="albums" class="table">
   <thead>
 
     <tr>
@@ -244,6 +246,7 @@ a:active {
       </div>
   </div>
 </div>
+<% will_paginate  %>
 
 
         <script>
