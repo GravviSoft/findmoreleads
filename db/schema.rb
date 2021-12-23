@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_20_040510) do
+ActiveRecord::Schema.define(version: 2021_12_22_203851) do
 
   create_table "invoice_items", force: :cascade do |t|
     t.string "name"
@@ -39,6 +39,24 @@ ActiveRecord::Schema.define(version: 2021_12_20_040510) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "leads", force: :cascade do |t|
+    t.string "date"
+    t.string "company"
+    t.string "industry"
+    t.string "phone"
+    t.string "email"
+    t.string "notes"
+    t.string "string"
+    t.string "address"
+    t.string "city"
+    t.string "state"
+    t.string "zip"
+    t.string "email_clicks"
+    t.string "website"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "qetquotes", force: :cascade do |t|
     t.boolean "ownhome"
     t.boolean "deciding"
@@ -62,6 +80,12 @@ ActiveRecord::Schema.define(version: 2021_12_20_040510) do
     t.string "lastname"
     t.integer "homeprice"
     t.string "industry"
+    t.string "company"
+    t.string "website"
+    t.string "employees"
+    t.string "phonenumber"
+    t.string "notes"
+    t.string "email_clicks"
   end
 
   create_table "quotes", force: :cascade do |t|

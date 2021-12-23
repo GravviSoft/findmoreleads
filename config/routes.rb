@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :leads
   resources :quote_steps
   resources :qetquotes
   resources :quotes
@@ -12,7 +13,21 @@ Rails.application.routes.draw do
   delete '/deletequote', to: 'qetquotes#destroy'
   get '/startquotes', to: 'quotes#startquote'
   post '/newquote', to: 'qetquotes#create'
-  # put '/editquote', to: 'qetquotes#update'
+
+
+
+  # DELETE /leads/:id(.:format)
+  delete '/deletelead', to: 'leads#destroy'
+  # PATCH  /leads/:id(.:format)
+  # PUT    /leads/:id(.:format)
+  patch '/editlead', to: 'leads#update'
+  # POST    /leads/:id(.:format)
+  post '/createlead', to: 'leads#create'
+  # GET
+  get '/leads', to: 'leads#index'
+
+
+  get '/quotes', to: 'quotes#show'
 
   get '/quotes', to: 'quotes#show'
   get '/signup', to: 'users#new'
