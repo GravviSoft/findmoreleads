@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_22_203851) do
+ActiveRecord::Schema.define(version: 2021_12_25_000831) do
 
   create_table "invoice_items", force: :cascade do |t|
     t.string "name"
@@ -57,6 +57,15 @@ ActiveRecord::Schema.define(version: 2021_12_22_203851) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "players", force: :cascade do |t|
+    t.string "name"
+    t.integer "team_id", null: false
+    t.integer "seasons"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["team_id"], name: "index_players_on_team_id"
+  end
+
   create_table "qetquotes", force: :cascade do |t|
     t.boolean "ownhome"
     t.boolean "deciding"
@@ -100,6 +109,12 @@ ActiveRecord::Schema.define(version: 2021_12_22_203851) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "teams", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
@@ -112,4 +127,5 @@ ActiveRecord::Schema.define(version: 2021_12_22_203851) do
   end
 
   add_foreign_key "invoice_items", "invoices"
+  add_foreign_key "players", "teams"
 end

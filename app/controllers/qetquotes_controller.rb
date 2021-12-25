@@ -16,7 +16,10 @@ class QetquotesController < ApplicationController
   def index
     @q = Qetquote.paginate(page: params[:page], per_page: 30).ransack(params[:q])
     @qetquotes = @q.result(distinct: true)
-    # @qetquotes_pag = @qetquotes.pagination(pages: params[:page])
+
+
+
+        # @qetquotes_pag = @qetquotes.pagination(pages: params[:page])
 
     # if params[:search].present?
     #   search_type = params[:search]

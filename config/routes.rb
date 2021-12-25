@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :players
   resources :leads
   resources :quote_steps
   resources :qetquotes

@@ -12,6 +12,11 @@ gem 'turbolinks'
 gem 'jbuilder'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
+
+gem "cssbundling-rails"
+gem "jsbundling-rails"
+gem "hotwire-rails"
+gem "faker"
 # #A library for making beautiful graphs.
 gem 'fusioncharts-rails'
 #setting application ENV Variables
@@ -62,3 +67,5 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "ransack", "~> 2.4"
+
+gem "stimulus_reflex", "~> 3.4"
