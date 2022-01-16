@@ -37,7 +37,7 @@ gem 'bootsnap',     '1.4.4', require: false
 
 
 group :development, :test do
-  gem 'sqlite3',    '1.4.1'
+  gem 'sqlite3'
   gem 'byebug',     '11.0.1', platforms: [:mri, :mingw, :x64_mingw]
 end
 
@@ -67,5 +67,3 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "ransack", "~> 2.4"
-
-gem "stimulus_reflex", "~> 3.4"

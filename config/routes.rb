@@ -10,6 +10,18 @@ Rails.application.routes.draw do
       post :toggle_ownhome
     end
   end
+
+
+
+
+
+  #Leads
+
+
+
+
+
+
   # get '/newquote', to: 'qetquotes#new'
   delete '/deletequote', to: 'qetquotes#destroy'
   get '/startquotes', to: 'quotes#startquote'
