@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}" }
 
-gem 'rails'
+gem 'rails', '>= 6.1.4.7'
 gem 'bcrypt'
 gem 'bootstrap-sass'
 gem 'puma'
@@ -68,4 +68,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "ransack", "~> 2.4"
 
-gem "stimulus_reflex", "~> 3.4"
+gem "stimulus_reflex", "~> 3.4", ">= 3.4.1"
